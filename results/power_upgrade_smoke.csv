@@ -1,0 +1,9 @@
+design,annual_sharpe,correlation,seed,fdp,end_to_end_power,conditional_power,proposal_recall,discoveries,delay,terminal_fdp,terminal_end_to_end_power
+telescoping-fixed,1.5,0.5,41000000,0.0,0.125,0.125,1.0,2,1038.5,0.0,0.0
+telescoping-hedged,1.5,0.5,41000000,0.0,0.0,0.0,1.0,0,,0.0,0.0
+campaign-fixed,1.5,0.5,41000000,0.0,0.0625,0.0625,1.0,1,1101.0,0.0,0.0
+campaign-hedged,1.5,0.5,41000000,0.0,0.0,0.0,1.0,0,,0.0,0.0
+telescoping-fixed,1.5,0.5,41000001,0.0,0.375,0.375,1.0,6,797.6666666666666,0.0,0.3125
+telescoping-hedged,1.5,0.5,41000001,0.0,0.25,0.25,1.0,4,1004.75,0.0,0.0625
+campaign-fixed,1.5,0.5,41000001,0.0,0.5,0.5,1.0,8,879.125,0.0,0.25
+campaign-hedged,1.5,0.5,41000001,0.0,0.1875,0.1875,1.0,3,997.6666666666666,0.0,0.0625

@@ -1,0 +1,86 @@
+{
+  "anchor_seed_stream": {
+    "base": 314159,
+    "cells": "published {0.5,1,1.5,2,3} x {0,0.5}"
+  },
+  "code_sha256": {
+    "inference.py": "328998fb08b34087ecacceb3384a363c91ee2d4265d00fbc43e180af1756ab45",
+    "run_empirical_finish.py": "627ebde9fceb7d73bd71d9ba7847ef6f29c4148cfce45800d06312a4e1e18fa8",
+    "simulation.py": "502a5de7f3c5e593021ed8df4c2459702d3537fe86f62e3d5763a34f2a7cdced"
+  },
+  "correlations": [
+    0.0,
+    0.5
+  ],
+  "dense_annual_sharpes": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+  ],
+  "heavy_tailed_null": {
+    "innovation_standardization": "divide by sqrt(3)",
+    "label": "new untuned diagnostic; not the unrecoverable prior run",
+    "repetitions": 500,
+    "score": "clip(0.25*sqrt(h[t])*(sqrt(.5)*u[t]+sqrt(.5)*v[j,t]),-1,1)",
+    "seed_range": [
+      20260730,
+      20261229
+    ],
+    "student_t_df": 3,
+    "variance_recursion": "h[0]=1; h[t]=0.05+0.10*u[t-1]^2+0.85*h[t-1]"
+  },
+  "inserted_seed_stream": {
+    "base": 20260730,
+    "cells": "{0.75,1.25,1.75,2.25,2.5,2.75} x {0,0.5}"
+  },
+  "inspection_frequency_trading_days": 5,
+  "new_admission_floor": "h=1/q at every q; mandatory for primary results",
+  "output_sha256": {
+    "heavy_tailed_null.csv": "9f5ff7bd396b658864474d4f15e261145fb3bcf3f19a884ca4b6fad63a13ae2c",
+    "heavy_tailed_null_seed_results.csv": "51a32b4fe974606d8e2628e274b6cb3c9b87469ae6284aeced5d8ddd1fa94874",
+    "matched_timing_anchor_audit.csv": "3ba0b50c86f7b6f44c635bd37e3cc208ef6f3d44a6fdebc40a0d5ef1907ed35b",
+    "matched_timing_power.csv": "9b4806644fab21c6993231933ef85dac12136b3eb3e350fbf0c62e21fb45b62d",
+    "matched_timing_seed_map.csv": "aea6d2932492378336268031179a9233fd2e6cd74b9e13002e5aa5e8b2982db3",
+    "matched_timing_seed_results.csv": "5c7899925efd16645d4e8edd3339767c8c4a78b2391b371cacdca4babc0be2b8",
+    "q_sensitivity_null.csv": "6e59adec30c26d3b7c6a56a3b3dfa6682a9d031812e877dbacf7f2cc308f5989",
+    "q_sensitivity_null_seed_results.csv": "5e6d8be7b49a6e33459cdfb02ea7ffc8c6f891affed939a229801047ed681f91",
+    "q_sensitivity_power.csv": "d735b0266156e5e65681045f9632cf971285febb71ef70e8a613382e06f5ee0d",
+    "q_sensitivity_power_seed_results.csv": "6ddd2b96a4d6068eacd9504c05a2a5b4c016585b51bb877f493636b29d4e077a"
+  },
+  "pre_floor_anchor_audit_max_absolute_difference": 4.3099611304674,
+  "primary_q": 0.1,
+  "proposal_weights": "gamma_j=1/[j(j+1)]",
+  "q_sensitivity_levels": [
+    0.01,
+    0.025,
+    0.05,
+    0.075,
+    0.1,
+    0.125,
+    0.15,
+    0.175,
+    0.2
+  ],
+  "q_sensitivity_null_seed_range": [
+    271828,
+    272327
+  ],
+  "q_sensitivity_power_cell": {
+    "annual_sharpe": 1.5,
+    "correlation": 0.5
+  },
+  "q_sensitivity_power_seed_range": [
+    315909,
+    316158
+  ],
+  "repetitions_per_power_cell": 250,
+  "schema_version": 1
+}

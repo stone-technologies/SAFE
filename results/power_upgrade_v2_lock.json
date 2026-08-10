@@ -1,0 +1,34 @@
+{
+  "locked_utc_date": "2026-08-09",
+  "status": "locked_before_v2_holdout",
+  "development_evidence": [
+    "results/power_upgrade_development_v4.csv",
+    "results/power_upgrade_geometric_development.csv"
+  ],
+  "selected_design": {
+    "name": "campaign75-geometric-daily",
+    "declared_campaign_cap": 50,
+    "campaign_share": 0.75,
+    "spending_rule": "gamma_j = 0.75/50 + 0.25/[j(j+1)] for j <= 50; gamma_j = 0.25/[j(j+1)] for j > 50",
+    "inspection_cadence_trading_days": 1,
+    "bet_multipliers": [1.0, 2.0, 4.0],
+    "component_cap": 0.5,
+    "mixture_weights": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333],
+    "new_admission_floor": 10.0
+  },
+  "comparators": [
+    "telescoping-fixed",
+    "campaign75-fixed-daily"
+  ],
+  "holdout_seed_policy": "six disjoint blocks beginning at 52000000, 250 replications per annual-Sharpe and correlation cell",
+  "holdout_cells": {
+    "annual_sharpes": [1.0, 1.5, 2.0],
+    "correlations": [0.0, 0.5],
+    "repetitions_per_cell": 250
+  },
+  "primary_holdout_cell": {
+    "annual_sharpe": 1.5,
+    "correlation": 0.5
+  },
+  "public_replay_policy": "unchanged telescoping weights, fixed plug-in bet, and five-day inspection; no market outcome entered design selection"
+}

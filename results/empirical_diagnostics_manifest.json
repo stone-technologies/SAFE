@@ -1,0 +1,145 @@
+{
+  "code_sha256": "f30ccf4ea7e16ed43055ca6bfc64935f0294816866cc5b8cda86b5cd4d430d83",
+  "factor_regressions": {
+    "dependent_variable": "2-bp net excess return of market_ew30",
+    "deployment_start": "first trading day after 2018-01-19 certification",
+    "hac_lags": 5,
+    "models": [
+      "CAPM",
+      "FF5+Mom"
+    ],
+    "rows": 2
+  },
+  "output_sha256": {
+    "factor_regression_diagnostics.csv": "b5689b2a8c847903f456400d9d9d383e10eff5a61e5c989cf43bbfc186780146",
+    "predictable_residual_gate_ledger.csv": "aec27b47487513bb5e819a70d402ab938bd1a69b093260c088f0cfa9b3c69498",
+    "predictable_residual_gate_summary.json": "c3862015446e530569a28369c24e0d43668f786017073b3ec61e7b5645f829aa",
+    "public_design_sensitivity.csv": "5b7c82fd250423d406d1afd9ece132c7b9f19c6d7117f0be878c0e277e1e4c69",
+    "scale_motivation_diagnostics.csv": "0ae9599ad269f1a3411c473d2c5e773b70ae46604bba9f407ad9f55babbd0ff9",
+    "spa_diagnostics.json": "e505449f1edcef6e3bd788cda8e9a5f72873cc0f0f9b7fce7dd4759d10a534cf",
+    "winner_curse_by_proposal.csv": "8602ff94d70ea8ba4bd51e9447e35e621083e4f8dcfa32d245ea8ee36c1982fe",
+    "winner_curse_summary.json": "2e6c190fce99a4d9c1ed3651d817685dadcd78d840c1c359e88d59530df3a698"
+  },
+  "predictable_residual_gate": {
+    "bet_policy": "proposal-time fixed lambda re-estimated from predictable residual-score history",
+    "beta_timing": "beta for date t is estimated only through t-1",
+    "certification_dates": [],
+    "certifications": 0,
+    "certified_strategies": [],
+    "diagnostic_label": "predictable FF5+Mom residual-gate robustness check",
+    "factor_beta_lookback_days": 1260,
+    "inspection_days": 5,
+    "intercept_treatment": "retained; subtract beta[t-1]' factor[t] only",
+    "minimum_beta_observations": 252,
+    "new_admission_floor": 10.0,
+    "proposal_ledger": "identical archived 77 proposals and dates",
+    "proposal_weights": "gamma_j=1/[j(j+1)]",
+    "q": 0.1,
+    "score_scale_multiple": 4.0,
+    "score_scale_window": 63
+  },
+  "public_design_sensitivity_rows": 12,
+  "scale_motivation": {
+    "definition": "clipping over all finite scores in the full 89-rule panel; upper-cap incidence and median over 77 proposal-time lambdas",
+    "rows": [
+      {
+        "clipped_score_count": 32949,
+        "finite_score_clipping_fraction": 0.06048251644274913,
+        "finite_score_count": 544769,
+        "lambda_at_upper_cap_count": 0,
+        "lambda_upper_cap": 0.5,
+        "proposal_count": 77,
+        "proposal_lambda_maximum": 0.19338847136125295,
+        "proposal_lambda_median": 0.0990820975018811,
+        "proposal_lambda_minimum": 0.01,
+        "proposal_lambda_upper_cap_fraction": 0.0,
+        "score_panel_candidates": 89,
+        "score_scale_multiple": 2.0
+      },
+      {
+        "clipped_score_count": 1731,
+        "finite_score_clipping_fraction": 0.0031774935798476052,
+        "finite_score_count": 544769,
+        "lambda_at_upper_cap_count": 0,
+        "lambda_upper_cap": 0.5,
+        "proposal_count": 77,
+        "proposal_lambda_maximum": 0.3426516814059194,
+        "proposal_lambda_median": 0.14530411883940472,
+        "proposal_lambda_minimum": 0.01,
+        "proposal_lambda_upper_cap_fraction": 0.0,
+        "score_panel_candidates": 89,
+        "score_scale_multiple": 4.0
+      },
+      {
+        "clipped_score_count": 54,
+        "finite_score_clipping_fraction": 9.912458308016792e-05,
+        "finite_score_count": 544769,
+        "lambda_at_upper_cap_count": 10,
+        "lambda_upper_cap": 0.5,
+        "proposal_count": 77,
+        "proposal_lambda_maximum": 0.5,
+        "proposal_lambda_median": 0.2866581239802068,
+        "proposal_lambda_minimum": 0.01,
+        "proposal_lambda_upper_cap_fraction": 0.12987012987012986,
+        "score_panel_candidates": 89,
+        "score_scale_multiple": 8.0
+      }
+    ]
+  },
+  "spa": {
+    "adaptive_symbolic_proposals_only": {
+      "mean_block_length": 20.0,
+      "models": 76,
+      "observations": 4882,
+      "observed_max_studentized_statistic": 2.4991742298306523,
+      "p_value_consistent": 0.146,
+      "p_value_lower": 0.1075,
+      "p_value_upper": 0.146,
+      "repetitions": 1999,
+      "seed": 20260730
+    },
+    "convention": "Studentized Hansen SPA against zero; Politis-Romano stationary bootstrap; lower/consistent/upper sample-dependent recentering",
+    "full_89_rule_panel": {
+      "mean_block_length": 20.0,
+      "models": 89,
+      "observations": 4882,
+      "observed_max_studentized_statistic": 2.5129832290329293,
+      "p_value_consistent": 0.157,
+      "p_value_lower": 0.1085,
+      "p_value_upper": 0.158,
+      "repetitions": 1999,
+      "seed": 20260730
+    },
+    "without_market_positive_control": {
+      "mean_block_length": 20.0,
+      "models": 88,
+      "observations": 4882,
+      "observed_max_studentized_statistic": 2.4991742298306523,
+      "p_value_consistent": 0.1565,
+      "p_value_lower": 0.1075,
+      "p_value_upper": 0.1575,
+      "repetitions": 1999,
+      "seed": 20260730
+    }
+  },
+  "winner_curse": {
+    "complete_252_day_holdouts": 74,
+    "fraction_post_below_pre": 0.7027027027027027,
+    "fraction_post_nonpositive": 0.5135135135135135,
+    "mean_optimism_gap": 0.5767502312484611,
+    "mean_postproposal_sharpe": -0.06306850748970641,
+    "mean_preproposal_sharpe": 0.5136817237587548,
+    "median_bootstrap_repetitions": 10000,
+    "median_bootstrap_seed": 20260730,
+    "median_optimism_gap": 0.5120915100354049,
+    "median_optimism_gap_bootstrap_ci_high": 0.7535170904314784,
+    "median_optimism_gap_bootstrap_ci_low": 0.39777811682589104,
+    "median_postproposal_sharpe": -0.03651750063070987,
+    "median_preproposal_sharpe": 0.4489209494570663,
+    "pre_post_pearson_correlation": 0.03443694254329558,
+    "preproposal_window_days": 1260,
+    "score_definition": "2-bp net excess candidate return",
+    "strict_postproposal_window_days": 252,
+    "symbolic_proposals": 76
+  }
+}

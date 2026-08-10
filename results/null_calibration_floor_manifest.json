@@ -1,0 +1,18 @@
+{
+  "dependence": "one Rademacher sign per date multiplies all 89 scores",
+  "inspection_frequency_trading_days": 5,
+  "maximum_proposals": 77,
+  "new_admission_floor": {
+    "Repeated 5% t-test": null,
+    "SAFE-ALPHA": 10.0,
+    "Same-bar leakage": 10.0,
+    "Unadjusted one-year holdout": null
+  },
+  "proposal_gap_trading_days": 63,
+  "q": 0.1,
+  "repetitions": 500,
+  "seed_range": [
+    271828,
+    272327
+  ]
+}

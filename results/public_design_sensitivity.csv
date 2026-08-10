@@ -1,0 +1,13 @@
+varied_factor,level,certifications,certified_strategies,certification_dates,first_certification_date,market_control_certified,market_control_date,market_control_frozen_e,market_control_gamma
+primary,q=.10; cadence=5; scale=4; telescope; rank=1,1,market_ew30,market_ew30:2018-01-19,2018-01-19,True,2018-01-19,20.0870404422,0.5
+q,0.05,0,,,,False,,,0.5
+q,0.2,2,market_ew30|time_series_momentum_lb126_monthly,market_ew30:2017-12-12|time_series_momentum_lb126_monthly:2018-01-19,2017-12-12,True,2017-12-12,10.359924748,0.5
+inspection_cadence_days,1,1,market_ew30,market_ew30:2018-01-19,2018-01-19,True,2018-01-19,20.0870404422,0.5
+inspection_cadence_days,21,0,,,,False,,,0.5
+score_scale_multiple,2,3,market_ew30|time_series_momentum_lb126_monthly|time_series_momentum_lb252_monthly,market_ew30:2014-02-28|time_series_momentum_lb126_monthly:2017-06-22|time_series_momentum_lb252_monthly:2016-01-11,2014-02-28,True,2014-02-28,20.9411599674,0.5
+score_scale_multiple,8,0,,,,False,,,0.5
+infinite_budget_schedule,gamma_j=j^-1.5/zeta(1.5),0,,,,False,,,0.382793383999
+infinite_budget_schedule,gamma_j=j^-2/zeta(2),1,market_ew30,market_ew30:2018-01-11,2018-01-11,True,2018-01-11,18.2055199671,0.607927101854
+market_control_budget_rank,5,0,,,,False,,,0.0333333333333
+market_control_budget_rank,10,0,,,,False,,,0.00909090909091
+market_control_budget_rank,20,0,,,,False,,,0.00238095238095

@@ -1,0 +1,88 @@
+{
+  "status": "development_only_not_confirmatory",
+  "run_date": "2026-08-09",
+  "purpose": "Screen proposal-time fixed betting scales and arithmetic hedges before any confirmatory evaluation.",
+  "implementation_candidate": "mixture-1-2-4",
+  "selection_note": "The 1,2,4 arithmetic hedge was within 0.00125 of the best low-effect design and had the highest mean end-to-end power at annual Sharpe 1.5 and 2.0. This development screen is not evidence of a uniformly dominating design.",
+  "seed_rule": "seed = 880000 + int(annual_sharpe * 10000) + repetition_index, for repetition_index 0,...,99",
+  "seed_blocks": [
+    {
+      "annual_sharpe": 1.0,
+      "seed_first": 890000,
+      "seed_last": 890099,
+      "repetitions": 100
+    },
+    {
+      "annual_sharpe": 1.5,
+      "seed_first": 895000,
+      "seed_last": 895099,
+      "repetitions": 100
+    },
+    {
+      "annual_sharpe": 2.0,
+      "seed_first": 900000,
+      "seed_last": 900099,
+      "repetitions": 100
+    }
+  ],
+  "simulation": {
+    "generator": "code/power_upgrade.py::planted_path",
+    "candidates": 80,
+    "alternatives": 16,
+    "pre_days": 504,
+    "post_days": 1260,
+    "proposal_gap": 15,
+    "maximum_proposals": 50,
+    "correlation": 0.5,
+    "annual_sharpes": [1.0, 1.5, 2.0]
+  },
+  "gate": {
+    "level": 0.1,
+    "new_admission_floor": 10.0,
+    "inspection_every_trading_days": 5,
+    "campaign_eta": 0.5,
+    "campaign_cap": 50,
+    "campaign_schedule": "gamma_j=(1-eta)/[j(j+1)]+eta/M for j<=M and gamma_j=(1-eta)/[j(j+1)] for j>M",
+    "component_lambda": "min(0.5, multiplier * proposal_time_base_lambda)",
+    "mixture_rule": "fixed equal-weight arithmetic mean of component e-processes"
+  },
+  "designs": [
+    {
+      "name": "fixed-1",
+      "bet_multipliers": [1.0],
+      "mixture_weights": [1.0]
+    },
+    {
+      "name": "fixed-1.5",
+      "bet_multipliers": [1.5],
+      "mixture_weights": [1.0]
+    },
+    {
+      "name": "fixed-2",
+      "bet_multipliers": [2.0],
+      "mixture_weights": [1.0]
+    },
+    {
+      "name": "mixture-0.5-1-2",
+      "bet_multipliers": [0.5, 1.0, 2.0],
+      "mixture_weights": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+    },
+    {
+      "name": "mixture-1-1.5-2",
+      "bet_multipliers": [1.0, 1.5, 2.0],
+      "mixture_weights": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+    },
+    {
+      "name": "mixture-1-2-4",
+      "bet_multipliers": [1.0, 2.0, 4.0],
+      "mixture_weights": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+    },
+    {
+      "name": "mixture-0.75-1.5",
+      "bet_multipliers": [0.75, 1.5],
+      "mixture_weights": [0.5, 0.5]
+    }
+  ],
+  "metric": "mean_end_to_end_power = true promotions / 16 planted alternatives, averaged over repetitions",
+  "results_csv": "results/power_upgrade_geometric_development.csv"
+}

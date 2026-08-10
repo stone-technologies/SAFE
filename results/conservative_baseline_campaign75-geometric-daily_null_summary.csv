@@ -1,0 +1,3 @@
+design,method,false_discovery_probability,ci_low,ci_high,mean_false_discoveries,median_first_day_if_any,repetitions
+campaign75-geometric-daily,Persistent weighted e-BH,0.042,0.027632099334746148,0.06335205123956134,0.158,1958.0,500
+campaign75-geometric-daily,Proposal e-alpha-spending (FWER),0.04,0.026040593951356387,0.06097405509707471,0.072,1961.0,500

@@ -1,0 +1,79 @@
+{
+  "anchor_audit_max_absolute_difference": 1.1368683772161603e-13,
+  "anchor_seed_stream": {
+    "base": 314159,
+    "cells": "published {0.5,1,1.5,2,3} x {0,0.5}"
+  },
+  "code_sha256": {
+    "inference.py": "9340c755130f1efea8e76472133a6f98ba479cf1e24a8c8d1c30eced783cb30b",
+    "run_empirical_finish.py": "622ae9ce18ea17a13745013a2dfbeb6843a4eec99292bcbabc0ce85779b16b2e",
+    "simulation.py": "d9df7a2ed954d969e574a99ec70159c98e41a9d44f81fa1d8d9815f7a322a4d3"
+  },
+  "correlations": [
+    0.0,
+    0.5
+  ],
+  "dense_annual_sharpes": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+  ],
+  "heavy_tailed_null": {
+    "innovation_standardization": "divide by sqrt(3)",
+    "label": "new untuned diagnostic; not the unrecoverable prior run",
+    "repetitions": 500,
+    "score": "clip(0.25*sqrt(h[t])*(sqrt(.5)*u[t]+sqrt(.5)*v[j,t]),-1,1)",
+    "seed_range": [
+      20260730,
+      20261229
+    ],
+    "student_t_df": 3,
+    "variance_recursion": "h[0]=1; h[t]=0.05+0.10*u[t-1]^2+0.85*h[t-1]"
+  },
+  "inserted_seed_stream": {
+    "base": 20260730,
+    "cells": "{0.75,1.25,1.75,2.25,2.5,2.75} x {0,0.5}"
+  },
+  "inspection_frequency_trading_days": 5,
+  "output_sha256": {
+    "matched_timing_anchor_audit.csv": "7b5197c6bd87739d8fca39ce3faae90552be5e76f3e9910ff2809b2fd68542ba",
+    "matched_timing_power.csv": "6f44b8d85c57857829fd807fa57e4eb7878e5e310b70ea093ff8bc52656af54d",
+    "matched_timing_seed_map.csv": "aea6d2932492378336268031179a9233fd2e6cd74b9e13002e5aa5e8b2982db3",
+    "matched_timing_seed_results.csv": "54554121e0fd159790143d1731cd5cd8be693f1e434db6244bb4f73bab0d21b8"
+  },
+  "primary_q": 0.1,
+  "proposal_weights": "gamma_j=1/[j(j+1)]",
+  "q_sensitivity_levels": [
+    0.01,
+    0.025,
+    0.05,
+    0.075,
+    0.1,
+    0.125,
+    0.15,
+    0.175,
+    0.2
+  ],
+  "q_sensitivity_null_seed_range": [
+    271828,
+    272327
+  ],
+  "q_sensitivity_power_cell": {
+    "annual_sharpe": 1.5,
+    "correlation": 0.5
+  },
+  "q_sensitivity_power_seed_range": [
+    315909,
+    316158
+  ],
+  "repetitions_per_power_cell": 250,
+  "schema_version": 1
+}

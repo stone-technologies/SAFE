@@ -1,0 +1,121 @@
+{
+  "candidate_strategies": 89,
+  "code_sha256": {
+    "baselines.py": "8479398a4aec928983173eb9533a3ee136414700e66fdb479ff9c6c95b0f28e3",
+    "data.py": "5deb746c83044a9913d620310e661c37db7112f1918355a2073e5aa13255d04b",
+    "empirical_diagnostics.py": "f30ccf4ea7e16ed43055ca6bfc64935f0294816866cc5b8cda86b5cd4d430d83",
+    "inference.py": "328998fb08b34087ecacceb3384a363c91ee2d4265d00fbc43e180af1756ab45",
+    "make_empirical_finish_figures.py": "031bf9c8f7d1023821b9ce7821bc70d5060f83cabcd1b4fdbb3e6a16fd88d4d2",
+    "make_figures.py": "c776512a25eea7b823784decb151533ec5c1530cd041d687f9117fe745959ea2",
+    "make_matched_metrics.py": "85c4d14eebec4b9a6c505d1d05d269ec662f19d56b0d96d7f163b31801655eef",
+    "portfolios.py": "7088e1cd0757553a494598f2a01c803e41f2d83eccadc1b7e04658a4d97e2216",
+    "run_empirical_finish.py": "627ebde9fceb7d73bd71d9ba7847ef6f29c4148cfce45800d06312a4e1e18fa8",
+    "run_experiments.py": "7ee64c96bd4b6d72693ff132a1799ae0006ebe2c6dc4ac702a7050a852aac069",
+    "run_floor_calibration.py": "9631fdcbf0a5de66861fa91e6915a66688b1576bf5a3614541c8edf3ec1bd2f0",
+    "simulation.py": "502a5de7f3c5e593021ed8df4c2459702d3537fe86f62e3d5763a34f2a7cdced",
+    "strategies.py": "ee489b1ae5ad2dfc57fe4c87d3da91ec570fc62b45b6e2f5839b03857c1fa72b"
+  },
+  "data": {
+    "factors5": {
+      "bytes": 149700,
+      "filename": "F-F_Research_Data_5_Factors_2x3_daily_CSV.zip",
+      "sha256": "bcf32ecc9e2bb20383784ac98891e42146a0091eec6ec77d3b5bf0d4e981e3f6",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_daily_CSV.zip"
+    },
+    "industries30": {
+      "bytes": 2590771,
+      "filename": "30_Industry_Portfolios_daily_CSV.zip",
+      "sha256": "7140a2dbbae2b9fa871ac99c223c4310efd2aa526bb9fa6170b118dbd1d61848",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/30_Industry_Portfolios_daily_CSV.zip"
+    },
+    "long_reversal": {
+      "bytes": 80276,
+      "filename": "F-F_LT_Reversal_Factor_daily_CSV.zip",
+      "sha256": "0e6ce053ea0c159bb07346cd11c391104297a89adbd7424585fd84f2c7544546",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_LT_Reversal_Factor_daily_CSV.zip"
+    },
+    "momentum": {
+      "bytes": 89788,
+      "filename": "F-F_Momentum_Factor_daily_CSV.zip",
+      "sha256": "f4237e2e36dffa13fd7823f55376316a94b5ac663af951dd9eaca8ed2c678bcf",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Momentum_Factor_daily_CSV.zip"
+    },
+    "short_reversal": {
+      "bytes": 85834,
+      "filename": "F-F_ST_Reversal_Factor_daily_CSV.zip",
+      "sha256": "2114d1ff89842ee703d6c51bbde015c129df2f9edc97cf67fef2d7e278db743b",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_ST_Reversal_Factor_daily_CSV.zip"
+    }
+  },
+  "dependencies": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0"
+  },
+  "fast_mode": false,
+  "fdr_level": 0.1,
+  "inspection_frequency_trading_days": 5,
+  "instruments": 30,
+  "new_admission_floor": "h=1/q=10 for every new certification",
+  "null_repetitions": 500,
+  "output_sha256": {
+    "calibration_power_caption.txt": "7f8363d6ebb425a70777940d3d8daf0b428558a80c15e91ce0632019fb8a472f",
+    "certification_ledger.csv": "4714b5134e5ecf0de76351049003226a664775002c2bcc9d48f6559b3ff12412",
+    "classical_diagnostics.json": "34b2e5263f4a3124738723d12a1062de7ee304593bcc30e2e1e8de58201aaa67",
+    "cost_sensitivity.csv": "c4ce34565d95f6fa56516c1e2623c71cbcc331acd74efff2caafb790eb596bf2",
+    "e_value_paths.csv": "6e14db7b9cd97a0b7482092cc5223432c2cd95f0d7279a3a8fa25f240eb2324f",
+    "economic_metrics.csv": "e598b1a47e5ac7b6122d78dc4acf92c3738017610e7ad9a1bb2dc5b6af73cade",
+    "economic_metrics_matched.csv": "e5a05b879b28ab9be7055da42ea4ec04086b2049fe5128d79548f40be673b8d2",
+    "empirical_diagnostics_manifest.json": "26423488c4bd9762390295e0c276420ee8dac9ab2a3a190de714344279cc60b5",
+    "empirical_finish_figure_manifest.json": "b77f572b0859dcfa0f468486cd0420dd9eed145c454e07bf50dccfd5c4ac5435",
+    "empirical_finish_manifest.json": "d9c86969741f1abf16060ab3d08ea5d058991700ba89df836c7e9a1421def47c",
+    "empirical_finish_manifest_no_admission_floor.json": "99a9a157f076c8f3da581d9b2740eb561595a8024c23c31f8d0ace7c01cd001b",
+    "evidence_path_caption.txt": "d28108cd62f1dd2f2094b3a370d37438af57258f9146d766cd77838d88ab5724",
+    "factor_regression_diagnostics.csv": "b5689b2a8c847903f456400d9d9d383e10eff5a61e5c989cf43bbfc186780146",
+    "heavy_tailed_null.csv": "9f5ff7bd396b658864474d4f15e261145fb3bcf3f19a884ca4b6fad63a13ae2c",
+    "heavy_tailed_null_seed_results.csv": "51a32b4fe974606d8e2628e274b6cb3c9b87469ae6284aeced5d8ddd1fa94874",
+    "matched_timing_anchor_audit.csv": "3ba0b50c86f7b6f44c635bd37e3cc208ef6f3d44a6fdebc40a0d5ef1907ed35b",
+    "matched_timing_anchor_audit_no_admission_floor.csv": "7b5197c6bd87739d8fca39ce3faae90552be5e76f3e9910ff2809b2fd68542ba",
+    "matched_timing_power.csv": "9b4806644fab21c6993231933ef85dac12136b3eb3e350fbf0c62e21fb45b62d",
+    "matched_timing_power_no_admission_floor.csv": "6f44b8d85c57857829fd807fa57e4eb7878e5e310b70ea093ff8bc52656af54d",
+    "matched_timing_seed_map.csv": "aea6d2932492378336268031179a9233fd2e6cd74b9e13002e5aa5e8b2982db3",
+    "matched_timing_seed_results.csv": "5c7899925efd16645d4e8edd3339767c8c4a78b2391b371cacdca4babc0be2b8",
+    "matched_timing_seed_results_no_admission_floor.csv": "54554121e0fd159790143d1731cd5cd8be693f1e434db6244bb4f73bab0d21b8",
+    "null_calibration.csv": "cb907133b9fcc372d507c5f9e6366896f519d90dc9a2a797c7c1683806aed47d",
+    "null_calibration_floor.csv": "cb907133b9fcc372d507c5f9e6366896f519d90dc9a2a797c7c1683806aed47d",
+    "null_calibration_floor_manifest.json": "2343c3da08ce5f9acb669ffb5362a8c70f92985c997561963c1f05809c721a40",
+    "null_calibration_floor_seed_results.csv": "78346ed07a5f6a7fd547ce634ba5d1861ccaf8e140020a931e72b1c190793d59",
+    "planted_power.csv": "2124ac2d6ac78208c206d1493d8520781a9df50b184e6765b331c023a62741ca",
+    "predictable_residual_gate_ledger.csv": "aec27b47487513bb5e819a70d402ab938bd1a69b093260c088f0cfa9b3c69498",
+    "predictable_residual_gate_summary.json": "c3862015446e530569a28369c24e0d43668f786017073b3ec61e7b5645f829aa",
+    "proposal_ledger.csv": "54bcc285b35f8d99c94dd265188cf439214474c038e99034f9b358ec5356702a",
+    "public_design_sensitivity.csv": "5b7c82fd250423d406d1afd9ece132c7b9f19c6d7117f0be878c0e277e1e4c69",
+    "q_sensitivity_null.csv": "6e59adec30c26d3b7c6a56a3b3dfa6682a9d031812e877dbacf7f2cc308f5989",
+    "q_sensitivity_null_seed_results.csv": "5e6d8be7b49a6e33459cdfb02ea7ffc8c6f891affed939a229801047ed681f91",
+    "q_sensitivity_power.csv": "d735b0266156e5e65681045f9632cf971285febb71ef70e8a613382e06f5ee0d",
+    "q_sensitivity_power_seed_results.csv": "6ddd2b96a4d6068eacd9504c05a2a5b4c016585b51bb877f493636b29d4e077a",
+    "scale_motivation_diagnostics.csv": "0ae9599ad269f1a3411c473d2c5e773b70ae46604bba9f407ad9f55babbd0ff9",
+    "spa_diagnostics.json": "e505449f1edcef6e3bd788cda8e9a5f72873cc0f0f9b7fce7dd4759d10a534cf",
+    "strategy_catalog.csv": "bac4edc36ecaf40ac1feff45aa5a88161a84275918d28b356588e676f7a533da",
+    "winner_curse_by_proposal.csv": "8602ff94d70ea8ba4bd51e9447e35e621083e4f8dcfa32d245ea8ee36c1982fe",
+    "winner_curse_summary.json": "2e6c190fce99a4d9c1ed3651d817685dadcd78d840c1c359e88d59530df3a698"
+  },
+  "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+  "power_repetitions_per_cell": 250,
+  "processed_data_sha256": {
+    "factors_daily.csv": "51bc4d2c0c00c43b6501d2157e293c8e4e926ba595af9ca821e4c97e308239ea",
+    "industries30_daily.csv": "9bbfca9e4b247503e073919c38ac8f2e538940e94b65057f823df254f356a8e6",
+    "risk_free_daily.csv": "20c78bb65af976946d0fe3a4c10747eca0944537d3b8866c2a97dd2da0867591"
+  },
+  "proposals": 77,
+  "python": "3.12.13 (main, Mar  3 2026, 14:59:34) [Clang 21.1.4 ]",
+  "reported_window_end": "2026-05-29",
+  "reported_window_start": "2007-01-03",
+  "sample_end": "2026-05-29",
+  "sample_start": "1963-07-01",
+  "score_scale_multiple": 4.0,
+  "score_scale_window": 63,
+  "simulations_reused": true,
+  "spending_weights": "gamma_j=1/[j(j+1)]"
+}

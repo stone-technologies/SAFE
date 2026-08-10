@@ -1,0 +1,15 @@
+{
+  "admission_floor": 10.0,
+  "betting_rule": "identical proposal-time fixed bets and mixture components",
+  "conservative_boundary": "E_j(t) >= 1 / (q gamma_j)",
+  "conservative_guarantee": "FWER <= q by Ville plus the proposal-weight union bound; arbitrary dependence and adaptive arrivals allowed under the global conditional e-process assumptions",
+  "conservative_method": "Proposal e-alpha-spending (FWER)",
+  "design": "anchored75-fixed-daily",
+  "fast": false,
+  "inspection_cadence": 1,
+  "joint_method": "Persistent weighted e-BH",
+  "level": 0.1,
+  "null_repetitions": 500,
+  "planted_repetitions_per_cell": 250,
+  "proposal_weights": "identical design_spending_weights for both procedures"
+}

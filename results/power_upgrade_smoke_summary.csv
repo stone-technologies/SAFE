@@ -1,0 +1,5 @@
+design,annual_sharpe,correlation,fdp,end_to_end_power,conditional_power,proposal_recall,discoveries,delay,terminal_fdp,terminal_end_to_end_power
+campaign-fixed,1.5,0.5,0.0,0.28125,0.28125,1.0,4.5,990.0625,0.0,0.125
+campaign-hedged,1.5,0.5,0.0,0.09375,0.09375,1.0,1.5,997.6666666666666,0.0,0.03125
+telescoping-fixed,1.5,0.5,0.0,0.25,0.25,1.0,4.0,918.0833333333333,0.0,0.15625
+telescoping-hedged,1.5,0.5,0.0,0.125,0.125,1.0,2.0,1004.75,0.0,0.03125

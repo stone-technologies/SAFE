@@ -1,0 +1,32 @@
+{
+  "caption_sha256": "849af3ff0788749efc77d3ac654dbe0e9596a1c645e7d9b3d88643549896856b",
+  "captions_sha256": {
+    "calibration_power_caption.txt": "849af3ff0788749efc77d3ac654dbe0e9596a1c645e7d9b3d88643549896856b",
+    "evidence_path_caption.txt": "ecf899e4a43d7d56d024759bab8f29d16d899b2821a93f630cf64297d9aed75e"
+  },
+  "code_sha256": "ff48665025b77d38d127ca6c8c16ad5c62f2dd8a1a02cf5e5a5fd104a6090b95",
+  "output_sha256": {
+    "calibration_power.pdf": "0235caa4c06aa8deeed1ffe576ad1d8857f04f0e7359fe1e0e72b53d9cb67540",
+    "calibration_power.png": "512b73104e40487c09e3854d7ad8809ddce3b075fc717ca7c1358cb2ad470b45",
+    "evidence_path_repaired.pdf": "194331b3944824fb4c3c4fdd9685a06e7de37678ac8780716ad914afd9935bd2",
+    "evidence_path_repaired.png": "a97dd0c4c1e027c3916a381c97444bdd735d9586b990cbe1f4bf0f0b52e23f5e",
+    "heavy_tailed_null.pdf": "0b68059350f4ee9f9dedc5e3ff67e0aa9a34e7450b23ad7aa8bf1cb151ac3368",
+    "heavy_tailed_null.png": "ddb6a82971426dcd04ece8f34edaa5ad32c25714ce32338a52ff2a2fa29b5566",
+    "matched_timing_comparison.pdf": "d36e6b1a4d570e69ee92769a57455732689f3a9bfc254c77e214f94b579e182d",
+    "matched_timing_comparison.png": "80804ee8b6c2ac8a0969c7627e6a932d9e917ac5611f4b66e34ffed6e2c66a0a"
+  },
+  "source_sha256": {
+    "certification_ledger.csv": "4714b5134e5ecf0de76351049003226a664775002c2bcc9d48f6559b3ff12412",
+    "conservative_baseline_campaign75-geometric-daily_null_summary.csv": "3ccfcfe66323950957fd991c29afba0a6f23b7c9c17cd4054895bac011184f45",
+    "conservative_baseline_campaign75-geometric-daily_power_seed_results.csv": "c13e522ef54f4d11544a4307b4f234f1c73f94945b8a00f0cf15fb7e69856189",
+    "e_value_paths.csv": "6e14db7b9cd97a0b7482092cc5223432c2cd95f0d7279a3a8fa25f240eb2324f",
+    "heavy_tailed_null.csv": "9f5ff7bd396b658864474d4f15e261145fb3bcf3f19a884ca4b6fad63a13ae2c",
+    "matched_timing_power.csv": "9b4806644fab21c6993231933ef85dac12136b3eb3e350fbf0c62e21fb45b62d",
+    "null_calibration.csv": "cb907133b9fcc372d507c5f9e6366896f519d90dc9a2a797c7c1683806aed47d",
+    "power_upgrade_v2_rank_summary.csv": "4b6a29554931c1d3e89bf52a7a3a73522871553d5beb0fc8ae03da45f8e08033",
+    "proposal_ledger.csv": "54bcc285b35f8d99c94dd265188cf439214474c038e99034f9b358ec5356702a",
+    "q_sensitivity_null.csv": "6e59adec30c26d3b7c6a56a3b3dfa6682a9d031812e877dbacf7f2cc308f5989",
+    "q_sensitivity_power.csv": "d735b0266156e5e65681045f9632cf971285febb71ef70e8a613382e06f5ee0d",
+    "winner_curse_by_proposal.csv": "8602ff94d70ea8ba4bd51e9447e35e621083e4f8dcfa32d245ea8ee36c1982fe"
+  }
+}

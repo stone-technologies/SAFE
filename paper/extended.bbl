@@ -1,0 +1,282 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{20}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Bailey et~al\mbox{.}(2017)]%
+        {bailey2017pbo}
+\bibfield{author}{\bibinfo{person}{David~H. Bailey},
+  \bibinfo{person}{Jonathan~M. Borwein}, \bibinfo{person}{Marcos L{\'o}pez~de
+  Prado}, {and} \bibinfo{person}{Qiji~Jim Zhu}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{The Probability of Backtest Overfitting}.
+\newblock \bibinfo{journal}{\emph{The Journal of Computational Finance}}
+  \bibinfo{volume}{20}, \bibinfo{number}{4} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{39--69}.
+\newblock
+\href{https://doi.org/10.21314/JCF.2016.322}{doi:\nolinkurl{10.21314/JCF.2016.322}}
+
+
+\bibitem[Bailey and L{\'o}pez~de Prado(2014)]%
+        {bailey2014deflated}
+\bibfield{author}{\bibinfo{person}{David~H. Bailey} {and}
+  \bibinfo{person}{Marcos L{\'o}pez~de Prado}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{The Deflated Sharpe Ratio: Correcting for Selection
+  Bias, Backtest Overfitting, and Non-Normality}.
+\newblock \bibinfo{journal}{\emph{The Journal of Portfolio Management}}
+  \bibinfo{volume}{40}, \bibinfo{number}{5} (\bibinfo{year}{2014}),
+  \bibinfo{pages}{94--107}.
+\newblock
+\href{https://doi.org/10.3905/jpm.2014.40.5.094}{doi:\nolinkurl{10.3905/jpm.2014.40.5.094}}
+
+
+\bibitem[Duan et~al\mbox{.}(2025)]%
+        {duan2025factormad}
+\bibfield{author}{\bibinfo{person}{Yitong Duan}, \bibinfo{person}{Chuheng
+  Zhang}, {and} \bibinfo{person}{Jian Li}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{FactorMAD}: A Multi-Agent Debate Framework Based
+  on Large Language Models for Interpretable Stock Alpha Factor Mining}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 6th ACM International Conference
+  on AI in Finance}}. \bibinfo{publisher}{ACM}, \bibinfo{pages}{605--613}.
+\newblock
+\href{https://doi.org/10.1145/3768292.3770377}{doi:\nolinkurl{10.1145/3768292.3770377}}
+
+
+\bibitem[Fischer et~al\mbox{.}(2024)]%
+        {fischer2024online}
+\bibfield{author}{\bibinfo{person}{Lasse Fischer}, \bibinfo{person}{Ziyu Xu},
+  {and} \bibinfo{person}{Aaditya Ramdas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{An Online Generalization of the
+  (e-){Benjamini--Hochberg} Procedure}.
+\newblock
+\showeprint[arxiv]{2407.20683}~[stat.ME]
+
+
+\bibitem[French(2026)]%
+        {french2026data}
+\bibfield{author}{\bibinfo{person}{Kenneth~R. French}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Data Library}.
+\newblock
+  \bibinfo{howpublished}{\url{https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}}.
+\newblock
+\shownote{U.S. research returns through May 2026}.
+\newblock
+
+
+\bibitem[Han et~al\mbox{.}(2026)]%
+        {han2026quantaalpha}
+\bibfield{author}{\bibinfo{person}{Jun Han} {et~al\mbox{.}}}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{QuantaAlpha}: An Evolutionary Framework for
+  {LLM}-Driven Alpha Mining}.
+\newblock
+\showeprint[arxiv]{2602.07085}~[q-fin.ST]
+
+
+\bibitem[Hansen(2005)]%
+        {hansen2005spa}
+\bibfield{author}{\bibinfo{person}{Peter~R. Hansen}.}
+  \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{A Test for Superior Predictive Ability}.
+\newblock \bibinfo{journal}{\emph{Journal of Business \& Economic Statistics}}
+  \bibinfo{volume}{23}, \bibinfo{number}{4} (\bibinfo{year}{2005}),
+  \bibinfo{pages}{365--380}.
+\newblock
+\href{https://doi.org/10.1198/073500105000000063}{doi:\nolinkurl{10.1198/073500105000000063}}
+
+
+\bibitem[Harvey et~al\mbox{.}(2016)]%
+        {harvey2016crosssection}
+\bibfield{author}{\bibinfo{person}{Campbell~R. Harvey}, \bibinfo{person}{Yan
+  Liu}, {and} \bibinfo{person}{Heqing Zhu}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{\ldots} and the Cross-Section of Expected
+  Returns}.
+\newblock \bibinfo{journal}{\emph{The Review of Financial Studies}}
+  \bibinfo{volume}{29}, \bibinfo{number}{1} (\bibinfo{year}{2016}),
+  \bibinfo{pages}{5--68}.
+\newblock
+\href{https://doi.org/10.1093/rfs/hhv059}{doi:\nolinkurl{10.1093/rfs/hhv059}}
+
+
+\bibitem[Huang and Fan(2026)]%
+        {huang2026beyond}
+\bibfield{author}{\bibinfo{person}{Allen~Yikuan Huang} {and}
+  \bibinfo{person}{Zheqi Fan}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Beyond Prompting: An Autonomous Framework for
+  Systematic Factor Investing via Agentic {AI}}.
+\newblock
+\showeprint[arxiv]{2603.14288}~[q-fin.PM]
+\href{https://doi.org/10.48550/arXiv.2603.14288}{doi:\nolinkurl{10.48550/arXiv.2603.14288}}
+
+
+\bibitem[Kaufmann and Koolen(2021)]%
+        {kaufmann2021mixture}
+\bibfield{author}{\bibinfo{person}{Emilie Kaufmann} {and}
+  \bibinfo{person}{Wouter~M. Koolen}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Mixture Martingales Revisited with Applications to
+  Sequential Tests and Confidence Intervals}.
+\newblock \bibinfo{journal}{\emph{Journal of Machine Learning Research}}
+  \bibinfo{volume}{22}, \bibinfo{number}{246} (\bibinfo{year}{2021}),
+  \bibinfo{pages}{1--44}.
+\newblock
+
+
+\bibitem[Shi et~al\mbox{.}(2026)]%
+        {shi2026hubble}
+\bibfield{author}{\bibinfo{person}{Runze Shi}, \bibinfo{person}{Shengyu Yan},
+  \bibinfo{person}{Yuecheng Cai}, {and} \bibinfo{person}{Chengxi Lv}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Hubble: An {LLM}-Driven Agentic Framework for Safe,
+  Diverse, and Reproducible Alpha Factor Discovery}.
+\newblock
+\showeprint[arxiv]{2604.09601}~[cs.AI]
+
+
+\bibitem[Tang et~al\mbox{.}(2025)]%
+        {tang2025alphaagent}
+\bibfield{author}{\bibinfo{person}{Ziyi Tang}, \bibinfo{person}{Zechuan Chen},
+  \bibinfo{person}{Jiarui Yang}, \bibinfo{person}{Jiayao Mai},
+  \bibinfo{person}{Yongsen Zheng}, \bibinfo{person}{Keze Wang},
+  \bibinfo{person}{Jinrui Chen}, {and} \bibinfo{person}{Liang Lin}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{AlphaAgent}: {LLM}-Driven Alpha Mining with
+  Regularized Exploration to Counteract Alpha Decay}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 31st ACM SIGKDD Conference on
+  Knowledge Discovery and Data Mining V.2}}. \bibinfo{publisher}{ACM},
+  \bibinfo{pages}{2813--2822}.
+\newblock
+\href{https://doi.org/10.1145/3711896.3736838}{doi:\nolinkurl{10.1145/3711896.3736838}}
+
+
+\bibitem[Tavyrikov et~al\mbox{.}(2025)]%
+        {tavyrikov2025carefree}
+\bibfield{author}{\bibinfo{person}{Yury Tavyrikov}, \bibinfo{person}{Jelle~J.
+  Goeman}, {and} \bibinfo{person}{Rianne de Heide}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{Carefree Multiple Testing with E-processes}.
+\newblock
+\showeprint[arxiv]{2501.19360}~[stat.ME]
+
+
+\bibitem[Vovk and Wang(2021)]%
+        {vovk2021evalues}
+\bibfield{author}{\bibinfo{person}{Vladimir Vovk} {and} \bibinfo{person}{Ruodu
+  Wang}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{E-values: Calibration, Combination, and
+  Applications}.
+\newblock \bibinfo{journal}{\emph{The Annals of Statistics}}
+  \bibinfo{volume}{49}, \bibinfo{number}{3} (\bibinfo{year}{2021}),
+  \bibinfo{pages}{1736--1754}.
+\newblock
+\href{https://doi.org/10.1214/20-AOS2020}{doi:\nolinkurl{10.1214/20-AOS2020}}
+
+
+\bibitem[Wang et~al\mbox{.}(2025)]%
+        {wang2025stopped}
+\bibfield{author}{\bibinfo{person}{Hongjian Wang}, \bibinfo{person}{Sanjit
+  Dandapanthula}, {and} \bibinfo{person}{Aaditya Ramdas}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Anytime-valid {FDR} Control with the Stopped e-{BH}
+  Procedure}.
+\newblock \bibinfo{journal}{\emph{Statistics \& Probability Letters}}
+  \bibinfo{volume}{226} (\bibinfo{year}{2025}), \bibinfo{pages}{110512}.
+\newblock
+\href{https://doi.org/10.1016/j.spl.2025.110512}{doi:\nolinkurl{10.1016/j.spl.2025.110512}}
+
+
+\bibitem[Wang and Ramdas(2022)]%
+        {wang2022false}
+\bibfield{author}{\bibinfo{person}{Ruodu Wang} {and} \bibinfo{person}{Aaditya
+  Ramdas}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{False Discovery Rate Control with E-values}.
+\newblock \bibinfo{journal}{\emph{Journal of the Royal Statistical Society
+  Series B: Statistical Methodology}} \bibinfo{volume}{84}, \bibinfo{number}{3}
+  (\bibinfo{year}{2022}), \bibinfo{pages}{822--852}.
+\newblock
+\href{https://doi.org/10.1111/rssb.12489}{doi:\nolinkurl{10.1111/rssb.12489}}
+
+
+\bibitem[Waudby-Smith and Ramdas(2024)]%
+        {waudbysmith2024betting}
+\bibfield{author}{\bibinfo{person}{Ian Waudby-Smith} {and}
+  \bibinfo{person}{Aaditya Ramdas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Estimating Means of Bounded Random Variables by
+  Betting}.
+\newblock \bibinfo{journal}{\emph{Journal of the Royal Statistical Society
+  Series B: Statistical Methodology}} \bibinfo{volume}{86}, \bibinfo{number}{1}
+  (\bibinfo{year}{2024}), \bibinfo{pages}{1--27}.
+\newblock
+\href{https://doi.org/10.1093/jrsssb/qkad009}{doi:\nolinkurl{10.1093/jrsssb/qkad009}}
+
+
+\bibitem[White(2000)]%
+        {white2000reality}
+\bibfield{author}{\bibinfo{person}{Halbert White}.}
+  \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{A Reality Check for Data Snooping}.
+\newblock \bibinfo{journal}{\emph{Econometrica}} \bibinfo{volume}{68},
+  \bibinfo{number}{5} (\bibinfo{year}{2000}), \bibinfo{pages}{1097--1126}.
+\newblock
+\href{https://doi.org/10.1111/1468-0262.00152}{doi:\nolinkurl{10.1111/1468-0262.00152}}
+
+
+\bibitem[Xu et~al\mbox{.}(2026)]%
+        {xu2026closure}
+\bibfield{author}{\bibinfo{person}{Ziyu Xu}, \bibinfo{person}{Lasse Fischer},
+  {and} \bibinfo{person}{Aaditya Ramdas}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Improving Online {FDR} Procedures via Online Analogs
+  of E-Closure and Compound E-Values}.
+\newblock
+\shownote{Camera-ready version for UAI 2026}.
+\newblock
+\showeprint[arxiv]{2603.24792}~[stat.ME]
+
+
+\bibitem[Xu and Ramdas(2024)]%
+        {xu2024online}
+\bibfield{author}{\bibinfo{person}{Ziyu Xu} {and} \bibinfo{person}{Aaditya
+  Ramdas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Online Multiple Testing with E-values}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 27th International Conference on
+  Artificial Intelligence and Statistics}} \emph{(\bibinfo{series}{Proceedings
+  of Machine Learning Research}, Vol.~\bibinfo{volume}{238})}.
+  \bibinfo{pages}{3997--4005}.
+\newblock
+
+
+\end{thebibliography}

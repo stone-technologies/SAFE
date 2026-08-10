@@ -1,0 +1,4 @@
+score_scale_multiple,score_panel_candidates,finite_score_count,clipped_score_count,finite_score_clipping_fraction,proposal_count,lambda_upper_cap,lambda_at_upper_cap_count,proposal_lambda_upper_cap_fraction,proposal_lambda_median,proposal_lambda_minimum,proposal_lambda_maximum
+2,89,544769,32949,0.0604825164427,77,0.5,0,0,0.0990820975019,0.01,0.193388471361
+4,89,544769,1731,0.00317749357985,77,0.5,0,0,0.145304118839,0.01,0.342651681406
+8,89,544769,54,9.91245830802e-05,77,0.5,10,0.12987012987,0.28665812398,0.01,0.5

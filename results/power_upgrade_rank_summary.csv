@@ -1,0 +1,11 @@
+design,rank_bin,true_proposals,true_promotions,power
+campaign75-fixed-daily,1-5,1247,961,0.7706495589414595
+telescoping-fixed,1-5,1247,1018,0.8163592622293504
+campaign75-fixed-daily,6-10,1205,821,0.6813278008298755
+telescoping-fixed,6-10,1205,766,0.6356846473029045
+campaign75-fixed-daily,11-20,1370,767,0.5598540145985401
+telescoping-fixed,11-20,1370,514,0.37518248175182484
+campaign75-fixed-daily,21-35,161,45,0.2795031055900621
+telescoping-fixed,21-35,161,12,0.07453416149068323
+campaign75-fixed-daily,36-50,17,3,0.17647058823529413
+telescoping-fixed,36-50,17,0,0.0

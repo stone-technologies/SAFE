@@ -1,0 +1,16 @@
+design,rank_bin,true_proposals,true_promotions,power
+campaign75-fixed-daily,1-5,1247,968,0.7762630312750601
+campaign75-geometric-daily,1-5,1247,979,0.785084202085004
+telescoping-fixed,1-5,1247,1012,0.8115477145148356
+campaign75-fixed-daily,6-10,1210,813,0.671900826446281
+campaign75-geometric-daily,6-10,1210,841,0.6950413223140496
+telescoping-fixed,6-10,1210,754,0.6231404958677685
+campaign75-fixed-daily,11-20,1349,742,0.5500370644922165
+campaign75-geometric-daily,11-20,1349,865,0.6412157153446998
+telescoping-fixed,11-20,1349,506,0.37509266123054114
+campaign75-fixed-daily,21-35,186,56,0.3010752688172043
+campaign75-geometric-daily,21-35,186,85,0.45698924731182794
+telescoping-fixed,21-35,186,17,0.0913978494623656
+campaign75-fixed-daily,36-50,8,1,0.125
+campaign75-geometric-daily,36-50,8,1,0.125
+telescoping-fixed,36-50,8,0,0.0

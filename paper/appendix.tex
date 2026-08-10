@@ -1,0 +1,899 @@
+\section{Formal Protocol and Statistical Estimand}
+\label{app:formal}
+
+This appendix gives the complete probability model and proofs underlying the
+SAFE-ALPHA certificate.  Time is discrete.  Let
+\((\Omega,\mathcal F,(\mathcal F_t)_{t\geq 0},P)\) be a filtered probability
+space, where \(\mathcal F_t\) is the \emph{global} information available to
+the research system by time \(t\).  It contains all market observations,
+data releases, agent inputs and outputs, candidate specifications, execution
+records, evidence streams, and gate decisions observed by then.  For a
+stopping time \(\tau\), write
+\[
+  \mathcal F_\tau
+  =\{B\in\mathcal F:B\cap\{\tau\leq t\}\in\mathcal F_t
+    \text{ for every }t\}.
+\]
+
+Candidate \(j\) arrives at an \((\mathcal F_t)\)-stopping time \(\tau_j\).
+Its executable specification \(A_j\) is
+\(\mathcal F_{\tau_j}\)-measurable.  The specification includes the signal
+formula, universe, data vintage, execution lag, missing-data convention,
+position and turnover definitions, cost rule, score transformation, and
+evidence rule.  We index only candidates that enter the protocol, so
+\(\tau_j<\infty\) almost surely.  There may be infinitely many candidates
+over the life of the system, but only finitely many may have arrived by any
+finite calendar time.  A substantive revision of \(A_j\) receives a new
+index, a new proposal time, and unit initial evidence.
+
+For \(t>\tau_j\), let \(X_{j,t}\) be the score produced by the committed
+strategy.  It is \(\mathcal F_t\)-measurable, and for the linear betting
+construction below we assume
+\begin{equation}
+  -1\leq X_{j,t}\leq 1\quad\text{almost surely}.
+  \label{eq:app-bounded}
+\end{equation}
+For fixed \(P\), let \(N_j\in\{0,1\}\) indicate that the randomly selected
+candidate is a true null.  We require \(N_j\) to be
+\(\mathcal F_{\tau_j}\)-measurable and take the following selective
+conditional-drift restriction as the primitive null condition:
+\begin{equation}
+  N_j\mathbf 1\{\tau_j<t\}
+  \mathbb E_P[X_{j,t}\mid\mathcal F_{t-1}]\leq 0
+  \quad\text{almost surely for every }t.
+  \label{eq:app-selective-null}
+\end{equation}
+Thus the identity of a null may be selected from the global past.  What is
+excluded is selection with information from the outcome that will test it.
+One formal construction starts with a countable or standard-Borel strategy
+grammar \(\mathcal S\).  Each \(a\in\mathcal S\) has a null model
+\(\mathcal P_a\), \(A_j\) is selected at \(\tau_j\), and
+\(N_j(P)=\mathbf 1\{P\in\mathcal P_{A_j}\}\).  In that construction,
+membership in \(\mathcal P_a\) must imply
+Eq.~\eqref{eq:app-selective-null} uniformly over every admissible adaptive
+history that can lead to \(A_j=a\).  Marginal mean zero for each strategy
+when prespecified does not suffice.
+
+\subsection{What is certified}
+\label{app:estimand}
+
+The theorem certifies the estimand represented by \(X_{j,t}\), not an
+unstated raw-return estimand.  To make this distinction explicit, suppose
+the committed position earns gross excess return \(G_{j,t}\), its turnover is
+\[
+  U_{j,t}=\frac12\lVert w_{j,t}-w_{j,t^-}\rVert_1,
+\]
+and the ledger charges \(c_{j,t}\) per unit of turnover.  The tested net
+return is
+\begin{equation}
+  R^{\mathrm{net}}_{j,t}=G_{j,t}-c_{j,t}U_{j,t}.
+  \label{eq:app-net-return}
+\end{equation}
+The position, execution rule, and accounting convention must be fixed before
+the corresponding return is realized.  A conservative cost schedule may be
+fixed at proposal time; it may also be updated predictably, with
+\(c_{j,t}\in\mathcal F_{t-1}\).  Actual fills and realized fees can instead
+enter Eq.~\eqref{eq:app-net-return} through a precommitted accounting rule.
+Choosing the cost charge after inspecting \(G_{j,t}\) is not admissible.
+
+In the empirical protocol, a predictable scale \(b_{j,t}>0\) is formed from
+lagged volatility and
+\begin{equation}
+  X_{j,t}
+  =\operatorname{clip}\!\left(
+      \frac{R^{\mathrm{net}}_{j,t}}{b_{j,t}},-1,1\right),
+  \qquad
+  b_{j,t}=4\max\{\widehat\sigma_{j,t-1},10^{-6}\},
+  \label{eq:app-score}
+\end{equation}
+where \(\widehat\sigma_{j,t-1}\) is estimated from 63 lagged observations.
+A lagged expanding estimate is used during initialization.  The null concerns
+the conditional mean of this bounded net score.  In general,
+\[
+  \mathbb E[R^{\mathrm{net}}_{j,t}\mid\mathcal F_{t-1}]\leq 0
+  \ \not\Longrightarrow\
+  \mathbb E[\operatorname{clip}(R^{\mathrm{net}}_{j,t}/b_{j,t},-1,1)
+       \mid\mathcal F_{t-1}]\leq 0.
+\]
+Consequently, the certificate must not be reported as a test of raw mean
+return.  A raw-mean interpretation requires an actually bounded payoff
+implemented through position limits, a known one-sided payoff bound, or a
+different e-process justified by a stated conditional moment-generating
+function or variance assumption.  The multiple-testing theorem below is
+agnostic about that choice: it uses only the selective e-validity property
+proved next.
+
+\section{Global E-Validity After Adaptive Proposal}
+\label{app:evalidity}
+
+Let \(\lambda_{j,t}\in[0,1]\) be
+\(\mathcal F_{t-1}\)-measurable.  The bet may use every element of the global
+past, including other candidates' histories, but not the current payoff.
+Define
+\begin{equation}
+  E_{j,t}=
+  \begin{cases}
+    1, & t\leq\tau_j,\\[1mm]
+    \displaystyle\prod_{s=\tau_j+1}^{t}
+       (1+\lambda_{j,s}X_{j,s}), & t>\tau_j .
+  \end{cases}
+  \label{eq:app-eprocess}
+\end{equation}
+Every factor is nonnegative by Eq.~\eqref{eq:app-bounded}.
+
+\begin{lemma}[Global e-validity]
+\label{lem:app-selective-e}
+Suppose Eq.~\eqref{eq:app-selective-null} holds.  Let \(S\geq\tau_j\) be any
+global stopping time, possibly unbounded or infinite, and define its killed
+stopping value by
+\[
+  \overline E_{j,S}
+  =E_{j,S}\mathbf 1\{S<\infty\},
+\]
+with the product in Eq.~\eqref{eq:app-eprocess} evaluated only on
+\(\{S<\infty\}\).  Then
+\begin{equation}
+  \mathbb E_P[N_j\overline E_{j,S}\mid\mathcal F_{\tau_j}]
+  \leq N_j\quad\text{almost surely}.
+  \label{eq:app-selective-e}
+\end{equation}
+In particular,
+\(\mathbb E_P[N_j\overline E_{j,S}]\leq\mathbb E_P[N_j]\).
+\end{lemma}
+
+\begin{proof}
+First consider one post-proposal update.  On the event \(N_j=1\) and
+\(\tau_j<t\), predictability and
+Eq.~\eqref{eq:app-selective-null} give
+\begin{align}
+ \mathbb E_P[E_{j,t}\mid\mathcal F_{t-1}]
+ &=E_{j,t-1}
+   \mathbb E_P[1+\lambda_{j,t}X_{j,t}\mid\mathcal F_{t-1}]
+ \notag\\
+ &=E_{j,t-1}\left\{1+\lambda_{j,t}
+   \mathbb E_P[X_{j,t}\mid\mathcal F_{t-1}]\right\}
+ \leq E_{j,t-1}.
+ \label{eq:app-one-step}
+\end{align}
+When \(N_j=0\), multiplication by \(N_j\) makes both sides zero.
+
+The random starting time requires a short argument.  Set
+\(\mathcal G_{j,n}=\mathcal F_{\tau_j+n}\) for \(n\geq0\).  Because
+\(\tau_j+n\) is a stopping time, this is a filtration, and
+\(N_jE_{j,\tau_j+n}\) is \(\mathcal G_{j,n}\)-measurable.  If
+\(B\in\mathcal G_{j,n-1}\), then
+\(B\cap\{\tau_j=r\}\in\mathcal F_{r+n-1}\).  Partitioning over the possible
+values of \(\tau_j\) and using Eq.~\eqref{eq:app-one-step} yields
+\begin{align*}
+ \mathbb E_P[\mathbf 1_BN_jE_{j,\tau_j+n}]
+ &=\sum_{r\geq0}
+   \mathbb E_P[\mathbf 1_{B\cap\{\tau_j=r\}}
+                    N_jE_{j,r+n}]\\
+ &\leq\sum_{r\geq0}
+   \mathbb E_P[\mathbf 1_{B\cap\{\tau_j=r\}}
+                    N_jE_{j,r+n-1}]\\
+ &=\mathbb E_P[\mathbf 1_BN_jE_{j,\tau_j+n-1}].
+\end{align*}
+It follows that
+\[
+  (N_jE_{j,\tau_j+n})_{n\geq0}
+\]
+is a nonnegative \((\mathcal G_{j,n})\)-supermartingale.  Its initial value
+is \(N_j\).
+
+The shifted time \(R=S-\tau_j\) is a nonnegative
+\((\mathcal G_{j,n})\)-stopping time: for every \(n\),
+\(\{R\leq n\}=\{S\leq\tau_j+n\}\in\mathcal G_{j,n}\).  Conditional optional
+sampling at \(R\wedge m\) therefore gives
+\begin{equation}
+  \mathbb E_P[
+    N_jE_{j,S\wedge(\tau_j+m)}\mid\mathcal F_{\tau_j}]
+  \leq N_j.
+  \label{eq:app-bounded-os}
+\end{equation}
+Now multiply the stopped variable by
+\(\mathbf 1\{S\leq\tau_j+m\}\).  This can only decrease it, and the resulting
+nonnegative variables converge pointwise to
+\(N_j\overline E_{j,S}\): if \(S<\infty\), equality with
+\(N_jE_{j,S}\) holds for all sufficiently large \(m\); if \(S=\infty\),
+they are identically zero.  Conditional Fatou's lemma applied to
+Eq.~\eqref{eq:app-bounded-os} proves
+Eq.~\eqref{eq:app-selective-e}.  Taking expectations proves the final
+statement.
+\end{proof}
+
+The product in Eq.~\eqref{eq:app-eprocess} is convenient rather than
+essential.  For example, if under the null
+\[
+ \mathbb E_P[
+   \exp\{\eta_{j,t}X_{j,t}-\eta_{j,t}^2v_{j,t}/2\}
+   \mid\mathcal F_{t-1}]\leq1
+\]
+for predictable \(\eta_{j,t}\) and \(v_{j,t}\), the corresponding
+exponential product is a global test supermartingale.  A convex mixture of
+global e-processes is again globally valid.  Such constructions can replace
+clipping when their conditional assumptions are economically defensible.
+
+\section{The Irreversible Weighted Gate}
+\label{app:gate}
+
+Fix \(q\in(0,1)\).  Candidate \(j\) receives a nonnegative weight
+\(\gamma_j\in\mathcal F_{\tau_j}\) such that
+\begin{equation}
+  \sum_{j=1}^{\infty}\gamma_j\leq1
+  \quad\text{almost surely}.
+  \label{eq:app-budget}
+\end{equation}
+The deterministic choice
+\(\gamma_j=1/\{j(j+1)\}\) telescopes to one and accommodates an unbounded
+proposal stream.  A proposal-time, data-dependent allocation is also
+permitted, provided Eq.~\eqref{eq:app-budget} holds pathwise.  The convention
+\(1/\gamma_j=\infty\) makes a zero-weight proposal ineligible for promotion.
+
+At inspection \(t\), let \(\mathcal A_t\) be the finite,
+\(\mathcal F_t\)-measurable set of eligible candidates satisfying
+\begin{equation}
+ D_{t-1}\subseteq\mathcal A_t\subseteq\{j:\tau_j<t\}.
+ \label{eq:app-eligibility}
+\end{equation}
+Eligibility may include a prespecified post-proposal seasoning period, but an
+unproposed index can never enter the gate.  Initialize
+\(D_{-1}=\varnothing\), and suppose
+inductively that \(D_{t-1}\) is finite and that each \(j\in D_{t-1}\) has a
+frozen value
+\[
+  \widetilde E_j=E_{j,S_j},\qquad
+  S_j=\inf\{s\geq\tau_j:j\in D_s\}.
+\]
+Form
+\begin{equation}
+ Z_{j,t}=
+ \begin{cases}
+   \widetilde E_j,&j\in D_{t-1},\\
+   E_{j,t},&j\in\mathcal A_t\setminus D_{t-1}.
+ \end{cases}
+ \label{eq:app-gate-z}
+\end{equation}
+Set the mandatory individual evidence floor to \(h_q=q^{-1}\).  For
+\(k\geq1\), let
+\begin{equation}
+ C_t(k)=\sum_{j\in\mathcal A_t}
+   \mathbf 1\!\left\{
+     Z_{j,t}\geq\max\!\left(h_q,\frac{1}{q\gamma_jk}\right)\right\}.
+ \label{eq:app-floor-count}
+\end{equation}
+and define
+\begin{align}
+ k_t^\star
+ &=\max\left(\{0\}\cup
+    \{k\in\{1,\ldots,|\mathcal A_t|\}:C_t(k)\geq k\}\right),
+ \label{eq:app-gate-k}\\
+ D_t
+ &=
+ \begin{cases}
+ \left\{j\in\mathcal A_t:
+ Z_{j,t}\geq\max\!\left(h_q,(q\gamma_jk_t^\star)^{-1}\right)\right\},
+       &k_t^\star>0,\\
+ \varnothing,&k_t^\star=0.
+ \end{cases}
+ \label{eq:app-gate-d}
+\end{align}
+Every new member \(j\in D_t\setminus D_{t-1}\) receives \(S_j=t\) and
+\(\widetilde E_j=E_{j,t}\).
+
+\begin{proposition}[Well-definedness, irreversibility, and self-consistency]
+\label{prop:app-gate}
+The recursion in Eqs.~\eqref{eq:app-gate-z} and \eqref{eq:app-gate-d} is
+adapted and finite.  For every \(t\),
+\begin{equation}
+  D_{t-1}\subseteq D_t,\qquad |D_t|=k_t^\star,
+  \label{eq:app-nested-cardinality}
+\end{equation}
+and
+\begin{equation}
+  j\in D_t
+  \quad\Longrightarrow\quad
+  \widetilde E_j\geq h_q,\qquad
+  \widetilde E_j\geq\frac{1}{q\gamma_j|D_t|}.
+  \label{eq:app-self-consistency}
+\end{equation}
+Consequently, each \(S_j\) is a global stopping time.
+\end{proposition}
+
+\begin{proof}
+All operations at inspection \(t\) involve a finite collection of
+\(\mathcal F_t\)-measurable variables, so \(k_t^\star\) and \(D_t\) are
+\(\mathcal F_t\)-measurable.  It remains to establish the invariants.
+Proceed by induction.  They are immediate at initialization.  Write
+\(d=|D_{t-1}|\).  If \(d>0\), the induction hypothesis gives, for every old
+member,
+\[
+  \widetilde E_j\geq
+  \max\!\left(h_q,\frac{1}{q\gamma_jd}\right).
+\]
+Hence \(C_t(d)\geq d\), so \(d\) is feasible in
+Eq.~\eqref{eq:app-gate-k}.  If \(d=0\), feasibility of \(k=0\) is built into
+the definition.  In either case \(k_t^\star\geq d\).  The map
+\(k\mapsto\max\{h_q,(q\gamma_jk)^{-1}\}\) is nonincreasing, so every old
+member exceeds its threshold at \(k_t^\star\).  Thus
+\(D_{t-1}\subseteq D_t\).
+
+If \(k_t^\star=0\), Eq.~\eqref{eq:app-gate-d} is empty and its cardinality
+equals \(k_t^\star\).  Now suppose \(1\leq k_t^\star<|\mathcal A_t|\) and
+\(C_t(k_t^\star)>k_t^\star\).  The threshold weakly decreases when \(k\)
+increases, so
+\[
+ C_t(k_t^\star+1)\geq C_t(k_t^\star)\geq k_t^\star+1.
+\]
+This contradicts maximality.  If
+\(k_t^\star=|\mathcal A_t|\), equality between the count and
+\(k_t^\star\) is automatic.  Therefore the set in
+Eq.~\eqref{eq:app-gate-d} has exactly \(k_t^\star\) members.  Its old members
+retain their frozen values, and every new member is frozen at the value used
+for admission.  This proves Eq.~\eqref{eq:app-self-consistency}.
+
+Finally, nestedness and Eq.~\eqref{eq:app-eligibility} give
+\(\{S_j\leq t\}=\{j\in D_t\}\in\mathcal F_t\).  Hence \(S_j\) is a global
+stopping time.
+\end{proof}
+
+The floor is not required for joint FDR control, but it rules out a
+weak-evidence passenger after other discoveries have lowered the step-up
+boundary.  On the null branch, stopped e-validity and conditional Markov give
+\(P(S_j<\infty\mid\mathcal F_{\tau_j})\leq q\).  This is a marginal statement
+for candidate \(j\), not family-wise error control for the proposal stream.
+
+\section{Simultaneous False-Discovery Control}
+\label{app:supfdr}
+
+The next result permits arbitrary dependence, distinct monitoring horizons,
+adaptive proposal times, and infinitely many eventual proposals.  Its
+multiple-testing step is the weighted
+self-consistency principle behind e-BH and online e-BH
+\cite{wang2022false,xu2024online,fischer2024online}; the proof must also
+handle random strategy identities and global stopping of evolving evidence.
+
+\begin{theorem}[Persistent SAFE-ALPHA certificate]
+\label{thm:app-supfdr}
+For each \(j\), suppose:
+\begin{enumerate}
+ \item \(\tau_j\) is a global stopping time and the candidate identity and
+       null indicator are \(\mathcal F_{\tau_j}\)-measurable;
+ \item \(E_{j,t}\) has the selective global e-validity property
+       \eqref{eq:app-selective-e} at every global stopping time
+       \(S\geq\tau_j\);
+ \item \(\gamma_j\geq0\) is \(\mathcal F_{\tau_j}\)-measurable and the
+       pathwise budget \eqref{eq:app-budget} holds; and
+ \item \(D_t\) is a finite, adapted, nested discovery process satisfying
+       Eq.~\eqref{eq:app-self-consistency}.
+\end{enumerate}
+Define
+\[
+ \operatorname{FDP}(D_t)
+ =\frac{\sum_{j\in D_t}N_j}{|D_t|\vee1}.
+\]
+Then, under arbitrary serial and cross-candidate dependence,
+\begin{equation}
+ \mathbb E_P\!\left[
+   \sup_{t\geq0}\operatorname{FDP}(D_t)\right]\leq q.
+ \label{eq:app-supfdr}
+\end{equation}
+Consequently,
+\begin{equation}
+ \mathbb E_P[\operatorname{FDP}(D_T)]\leq q
+ \label{eq:app-stopped-fdr}
+\end{equation}
+for every almost surely finite global stopping time \(T\).  The rule defining
+\(T\) may use the complete research history, including market returns,
+agent outputs, all evidence streams, portfolio performance, and prior gate
+decisions.
+\end{theorem}
+
+\begin{proof}
+Define the killed promotion value
+\[
+ \overline E_j
+ =E_{j,S_j}\mathbf 1\{S_j<\infty\}.
+\]
+Proposition~\ref{prop:app-gate} makes \(S_j\) a global stopping time, and
+selective e-validity gives
+\begin{equation}
+  \mathbb E_P[N_j\overline E_j\mid\mathcal F_{\tau_j}]
+  \leq N_j.
+  \label{eq:app-promotion-valid}
+\end{equation}
+Fix a sample path and a time \(t\).  If \(D_t=\varnothing\), its FDP is zero.
+Otherwise, Eq.~\eqref{eq:app-self-consistency} implies, for every \(j\),
+\[
+ \frac{\mathbf 1\{j\in D_t\}}{|D_t|}
+ \leq q\gamma_j\widetilde E_j\mathbf 1\{j\in D_t\}.
+\]
+Multiplication by \(N_j\), followed by summation, gives the pathwise bound
+\begin{align}
+ \operatorname{FDP}(D_t)
+ &\leq q\sum_{j\in D_t}\gamma_jN_j\widetilde E_j
+ \leq q\sum_{j=1}^{\infty}\gamma_jN_j\overline E_j.
+ \label{eq:app-pathwise}
+\end{align}
+The last expression is independent of \(t\).  Therefore
+\[
+ \sup_{t\geq0}\operatorname{FDP}(D_t)
+ \leq q\sum_{j=1}^{\infty}\gamma_jN_j\overline E_j.
+\]
+All summands are nonnegative.  Tonelli's theorem, proposal-time
+measurability of \(\gamma_j\), and
+Eq.~\eqref{eq:app-promotion-valid} now yield
+\begin{align*}
+ \mathbb E_P[\sup_t\operatorname{FDP}(D_t)]
+ &\leq q\sum_{j=1}^{\infty}
+    \mathbb E_P[\gamma_jN_j\overline E_j]\\
+ &=q\sum_{j=1}^{\infty}
+    \mathbb E_P\!\left[
+      \gamma_j\,
+      \mathbb E_P[N_j\overline E_j\mid\mathcal F_{\tau_j}]
+    \right]\\
+ &\leq q\sum_{j=1}^{\infty}\mathbb E_P[\gamma_jN_j]\\
+ &\leq q\,\mathbb E_P\!\left[\sum_{j=1}^{\infty}\gamma_j\right]
+ \leq q.
+\end{align*}
+This argument is unaffected by infinitely many eventual candidates:
+finiteness at each inspection makes the gate well defined, and Tonelli
+justifies the countable sum.  Finally, the pathwise inequality
+\[
+  \operatorname{FDP}(D_T)\leq\sup_t\operatorname{FDP}(D_t)
+\]
+proves Eq.~\eqref{eq:app-stopped-fdr}.
+\end{proof}
+
+The supremum appears \emph{inside} the expectation in
+Eq.~\eqref{eq:app-supfdr}; this is stronger than fixed-time FDR control and
+immediately implies control under optional stopping.  The argument depends
+on freezing a single e-valid value at each global promotion time.  It does
+not treat a candidate's raw historical maximum as an e-value.
+
+\begin{proposition}[Containment of matched terminal e-BH]
+\label{prop:app-terminal-containment}
+At an inspection date \(t\), let \(R_t\) be the one-shot floor-augmented
+weighted e-BH set obtained from the unfrozen endpoints \(E_{j,t}\) on
+\(\mathcal A_t\), using the same \(q\), \(\gamma\), and \(h_q\) as the
+persistent gate.  Then \(R_t\subseteq D_t\) pathwise.
+\end{proposition}
+
+\begin{proof}
+Write \(k=|R_t|\) and \(d=|D_{t-1}|\).  Every terminal member passes the
+floor and its size-\(k\) boundary.  By
+Eq.~\eqref{eq:app-self-consistency}, every old member passes the floor and its
+size-\(d\) boundary; every candidate outside \(D_{t-1}\) uses the same raw
+endpoint in both procedures.  If \(k\leq d\), all terminal members also pass
+at size \(d\), and \(k_t^\star\geq d\).  If \(k>d\), the union of the old and
+terminal sets makes size \(k\) feasible, so \(k_t^\star\geq k\).  In either
+case, the persistent threshold at \(k_t^\star\) is no larger than the boundary
+already passed by each member of \(R_t\), proving the inclusion.
+\end{proof}
+
+\section{The Global-Filtration Condition and Its Boundaries}
+\label{app:causal}
+
+\subsection{A causal sufficient condition}
+
+Equation~\eqref{eq:app-selective-null} is the exact condition used in the
+proof.  The following representation gives it an operational interpretation.
+Let \(C_t\in\mathcal F_{t-1}\) be a recorded market state and let \(Y_t\) be
+the vector of contemporaneous innovations.  Suppose a transition kernel
+\(K_t\) satisfies
+\begin{equation}
+  \mathcal L(Y_t\mid\mathcal F_{t-1})
+  =K_t(\,\cdot\mid C_t).
+  \label{eq:app-kernel}
+\end{equation}
+The committed strategy produces
+\[
+  X_{j,t}=g(A_j,C_t,Y_t).
+\]
+Because \(A_j\in\mathcal F_{t-1}\) whenever \(t>\tau_j\), the null condition
+\begin{equation}
+ N_j\int g(A_j,C_t,y)\,K_t(dy\mid C_t)\leq0
+ \quad\text{on }\{\tau_j<t\}
+ \label{eq:app-kernel-null}
+\end{equation}
+implies Eq.~\eqref{eq:app-selective-null} by conditional integration.  The
+coordinates of \(Y_t\), and hence all strategy returns on the same date, may
+be arbitrarily dependent.  The kernel conditions in
+Eqs.~\eqref{eq:app-kernel} and \eqref{eq:app-kernel-null} do not assert a Markov
+market.  They isolate the relevant causal restriction: no unrecorded
+future innovation may reach the proposer, another evidence stream, or the
+gate before the tested payoff is realized.  This is the global-filtration
+condition emphasized for stopped e-BH by
+\citet{wang2025stopped}.
+
+The condition translates into auditable implementation rules:
+\begin{enumerate}
+ \item a signal using the close at \(t\) trades no earlier than the first
+       implementable price after that close;
+ \item proposal timestamps, data vintages, code hashes, random seeds, cost
+       inputs, and execution lags are committed before evaluation;
+ \item pre-proposal backtest returns never enter \(E_{j,t}\);
+ \item a formula, universe, lag, or regime revision starts a new candidate;
+ \item all evidence streams are aligned to the same physical market clock,
+       rather than by observation number; and
+ \item only the betting rule, not the tested payoff formula, may adapt
+       predictably within an existing evidence process.
+\end{enumerate}
+
+\subsection{Same-bar leakage}
+\label{app:same-bar}
+
+Let \(X\) be a fair Rademacher payoff.  It satisfies the null
+\(\mathbb E[X]=0\).  If a bettor illegally observes the same-bar payoff and
+then sets
+\[
+  \lambda=\tfrac12\mathbf 1\{X=1\},
+\]
+the purported one-step evidence multiplier is \(3/2\) when \(X=1\) and \(1\)
+when \(X=-1\).  Hence
+\[
+  \mathbb E[1+\lambda X]
+  =\tfrac12(3/2)+\tfrac12(1)=\tfrac54>1.
+\]
+The loss of validity is entirely due to nonpredictability.  The example also
+shows why a signal computed with a closing price cannot be credited with a
+trade at that same closing price.
+
+\subsection{Local validity does not imply global validity}
+\label{app:local-global}
+
+Let \(Y^1_1,Y^1_2,\ldots\) be independent Rademacher variables, and define a
+second stream by \(Y^2_n=Y^1_{n+1}\).  In the filtration generated only by
+the first stream,
+\[
+  M^1_n=\prod_{s=1}^n(1+Y^1_s/2)
+\]
+is a nonnegative martingale.  The global filtration containing both streams
+reveals \(Y^1_{n+1}\) at time \(n\).  In that filtration,
+\[
+  S=1+\mathbf 1\{Y^2_1=1\}
+    =1+\mathbf 1\{Y^1_2=1\}
+\]
+is a stopping time.  Nevertheless,
+\begin{align*}
+ \mathbb E[M^1_S]
+ &=\tfrac12\mathbb E[M^1_2\mid Y^1_2=1]
+   +\tfrac12\mathbb E[M^1_1\mid Y^1_2=-1]\\
+ &=\tfrac12(3/2)+\tfrac12(1)=\tfrac54.
+\end{align*}
+Thus local optional-stopping validity is insufficient for a gate that
+observes all streams.  This counterexample is the basic leakage mechanism
+identified by \citet{wang2025stopped}.  SAFE-ALPHA requires every candidate's
+e-process to be valid in the filtration in which the gate stops it.
+
+\subsection{A random terminal family defeats ordinary e-BH}
+\label{app:random-family}
+
+Summable proposal weights are not a cosmetic replacement for the terminal
+number of candidates.  Let all hypotheses be null and, independently for
+\(j\geq1\), set
+\[
+ E_j=
+ \begin{cases}
+   j/q,&\text{with probability }q/j,\\
+   0,&\text{otherwise}.
+ \end{cases}
+\]
+Each \(E_j\) is an e-value because \(\mathbb E[E_j]=1\).  Stop proposing at
+\[
+  J=\inf\{j:E_j=j/q\}.
+\]
+Since \(\sum_jq/j=\infty\), independence implies \(J<\infty\) almost surely.
+Ordinary unweighted e-BH applied to the random family
+\(E_1,\ldots,E_J\) rejects \(H_J\): for one rejection its threshold is
+\(J/q\), exactly \(E_J\).  It therefore has FDR one.  A deterministic
+maximum \(M\) is safe with \(\gamma_j=1/M\) for all \(M\) slots, including
+unused slots.  An unbounded adaptive stream requires a summable budget such
+as Eq.~\eqref{eq:app-budget}.
+
+\subsection{A raw running maximum is not an e-value}
+\label{app:running-max}
+
+Consider the one-step martingale \(E_0=1\) and
+\[
+  E_1=
+  \begin{cases}
+    2,&\text{with probability }1/2,\\
+    0,&\text{with probability }1/2,
+  \end{cases}
+\]
+held constant thereafter.  Although \(\mathbb E[E_1]=1\),
+\[
+  \mathbb E\!\left[\max_{s\leq1}E_s\right]
+  =\tfrac12(2)+\tfrac12(1)=\tfrac32.
+\]
+The running maximum is therefore not an e-value.  Under dependence,
+submitting raw e-process maxima to e-BH can inflate FDR; explicit
+multiple-testing counterexamples are given by
+\citet{tavyrikov2025carefree}.  SAFE-ALPHA does something different.  It
+freezes \(E_{j,t}\) only when the \emph{current} value passes the joint
+self-consistent gate.  That first-promotion time is global, and
+Lemma~\ref{lem:app-selective-e} validates the single frozen value.  It never
+recalls a prior sub-threshold peak.
+
+If historical peaks are operationally indispensable, one must first apply a
+valid adjuster.  A sufficient form is a nondecreasing function
+\(A:[1,\infty]\to[0,\infty]\) satisfying
+\[
+  \int_1^\infty\frac{A(x)}{x^2}\,dx\leq1,
+\]
+and then use \(A(\sup_{s\leq t}E_{j,s})\).  The adjustment restores validity
+but generally reduces power.
+
+\section{Proposal-Rank Budget Allocation}
+\label{app:rank-budget}
+
+The spending weights determine the evidence boundary assigned to proposal
+rank.  The following identity is an oracle calculation for the first useful
+proposal; it is not a claim that the default telescoping schedule is generally
+delay-optimal in a dynamic step-up process.
+
+\begin{proposition}[Oracle one-discovery boundary]
+\label{prop:app-oracle-budget}
+Let \(J\) denote the rank of the first useful proposal and suppose
+\(P(J=j)=\pi_j\).  Assume \(\sum_j\pi_j=\sum_j\gamma_j=1\) and
+\(\gamma_j>0\) whenever \(\pi_j>0\).  Before another discovery has lowered
+the step-up boundary,
+\begin{equation}
+ \mathbb E_\pi\!\left[\log\frac{1}{q\gamma_J}\right]
+ =\log\frac1q+H(\pi)+\KL(\pi\,\|\,\gamma).
+ \label{eq:app-rank-identity}
+\end{equation}
+The expectation is uniquely minimized by \(\gamma=\pi\).  If, in addition,
+the log evidence grows deterministically as
+\(\log E_{J,\tau_J+n}=rn\) for a common \(r>0\), then replacing the oracle
+schedule by \(\gamma\) adds \(\KL(\pi\,\|\,\gamma)/r\) to expected
+continuous crossing time.  On an integer inspection grid the equality holds
+up to less than one inspection interval from rounding.
+\end{proposition}
+
+\begin{proof}
+Direct expansion gives
+\begin{align*}
+ \mathbb E_\pi\!\left[\log\frac{1}{q\gamma_J}\right]
+ &=\log\frac1q+\sum_j\pi_j\log\frac1{\gamma_j}\\
+ &=\log\frac1q+H(\pi)
+   +\sum_j\pi_j\log\frac{\pi_j}{\gamma_j}.
+\end{align*}
+The last sum is \(\KL(\pi\,\|\,\gamma)\), which is nonnegative and vanishes
+exactly when \(\gamma=\pi\).  Under deterministic common log growth, crossing
+time is the log boundary divided by \(r\), which proves the final statement.
+\end{proof}
+
+When proposal ranks and evidence growth rates are heterogeneous or dependent,
+minimizing expected hitting time becomes a different design problem.  The
+identity nevertheless quantifies the log-boundary regret of a misspecified
+rank prior and explains why proposal-time economic information can be useful
+without allowing post-proposal outcomes to determine the budget.
+
+\section{Finite-Sample Power and Certification Delay}
+\label{app:power}
+
+The following bound makes the price of a late proposal explicit.  It is
+finite-sample and allows arbitrary dependence compatible with the stated
+conditional alternative.
+
+\begin{proposition}[Certification by a fixed post-proposal horizon]
+\label{prop:app-power}
+Fix candidate \(j\).  Suppose that, for every \(s\geq1\),
+\begin{equation}
+ X_{j,\tau_j+s}\in[-1,1],
+ \qquad
+ \mathbb E_P[X_{j,\tau_j+s}\mid
+              \mathcal F_{\tau_j+s-1}]\geq\mu
+ \label{eq:app-alt}
+\end{equation}
+almost surely, where \(0<\mu\leq1\).  Use the constant predictable bet
+\(\lambda=\mu/2\).  Set
+\[
+ g=\frac{\mu^2}{4},\qquad
+ c_\mu=\log\frac{1+\mu/2}{1-\mu/2},
+\]
+and let \(d=|D_{\tau_j-1}|\), with \(D_{-1}=\varnothing\).  Conditional on
+\(\mathcal F_{\tau_j}\), define
+\begin{equation}
+ L_j^{\rm floor}(d)
+ =\log\frac1q+
+  \left[\log\frac{1}{\gamma_j(d+1)}\right]_+.
+ \label{eq:app-floor-delay-boundary}
+\end{equation}
+Suppose candidate \(j\) is eligible and the gate is inspected at
+\(t=\tau_j+n\).  For any \(\delta\in(0,1)\), it is promoted no later than
+that inspection with conditional probability at least \(1-\delta\) whenever
+\begin{equation}
+ ng-c_\mu\sqrt{\frac n2\log\frac1\delta}\geq L_j^{\rm floor}(d).
+ \label{eq:app-delay-implicit}
+\end{equation}
+Equivalently, it suffices that
+\begin{equation}
+ n\geq
+ \left[
+ \frac{
+ c_\mu\sqrt{\tfrac12\log(1/\delta)}
+ +\sqrt{\tfrac12c_\mu^2\log(1/\delta)+4gL_j^{\rm floor}(d)}
+ }{2g}
+ \right]^2.
+ \label{eq:app-delay-explicit}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For \(|u|\leq1/2\), \(\log(1+u)\geq u-u^2\).  Put
+\(Y_{j,t}=\log(1+\lambda X_{j,t})\).  Because
+\(\lambda=\mu/2\leq1/2\), Eq.~\eqref{eq:app-alt} implies
+\begin{align}
+ \mathbb E_P[Y_{j,t}\mid\mathcal F_{t-1}]
+ &\geq
+ \lambda\mathbb E_P[X_{j,t}\mid\mathcal F_{t-1}]
+ -\lambda^2\mathbb E_P[X_{j,t}^2\mid\mathcal F_{t-1}]
+ \notag\\
+ &\geq\lambda\mu-\lambda^2
+ =\frac{\mu^2}{4}=g.
+ \label{eq:app-log-drift}
+\end{align}
+Each log increment belongs to
+\([\log(1-\lambda),\log(1+\lambda)]\), an interval of length \(c_\mu\).
+Let
+\[
+ Z_s=Y_{j,\tau_j+s}
+ -\mathbb E_P[Y_{j,\tau_j+s}\mid\mathcal F_{\tau_j+s-1}].
+\]
+These are martingale differences in the shifted filtration.  The conditional
+Hoeffding lemma gives
+\(\mathbb E_P[e^{-\eta Z_s}\mid\mathcal F_{\tau_j+s-1}]
+\leq e^{\eta^2c_\mu^2/8}\).  Multiplication over \(s\), Markov's inequality,
+and optimization over \(\eta>0\) yield
+\[
+ P\!\left(
+   \left.\sum_{s=1}^nZ_s\leq-a\right|\mathcal F_{\tau_j}\right)
+ \leq\exp\!\left(-\frac{2a^2}{nc_\mu^2}\right).
+\]
+Combining this inequality with Eq.~\eqref{eq:app-log-drift} and setting
+\(a=c_\mu\sqrt{\tfrac n2\log(1/\delta)}\) gives
+\begin{equation}
+ P\!\left(
+ \left.
+ \log E_{j,\tau_j+n}
+ <ng-c_\mu\sqrt{\frac n2\log\frac1\delta}
+ \ \right|\mathcal F_{\tau_j}\right)\leq\delta.
+ \label{eq:app-log-concentration}
+\end{equation}
+
+On the complementary event, Eq.~\eqref{eq:app-delay-implicit} yields
+\[
+E_{j,\tau_j+n}\geq
+ \max\!\left\{\frac1q,\frac{1}{q\gamma_j(d+1)}\right\}.
+\]
+If \(j\) was promoted earlier, there is nothing to prove.  Otherwise let
+\(m=|D_{\tau_j+n-1}|\).  Nestedness implies \(m\geq d\), and every one of
+the \(m\) old discoveries remains above its threshold when the proposed set
+size grows from \(m\) to \(m+1\).  Moreover,
+\[
+ E_{j,\tau_j+n}
+ \geq\max\!\left\{\frac1q,\frac{1}{q\gamma_j(d+1)}\right\}
+ \geq\max\!\left\{\frac1q,\frac{1}{q\gamma_j(m+1)}\right\}.
+\]
+Thus \(k=m+1\) is feasible in the maximal step-up rule, and \(j\) is
+promoted at the current inspection.  This proves the probability statement.
+
+To solve Eq.~\eqref{eq:app-delay-implicit}, put \(y=\sqrt n\) and
+\(a=c_\mu\sqrt{\tfrac12\log(1/\delta)}\).  The required inequality is
+\(gy^2-ay-L_j^{\rm floor}(d)\geq0\).  Its nonnegative root is
+\[
+ y=\frac{a+\sqrt{a^2+4gL_j^{\rm floor}(d)}}{2g},
+\]
+which gives Eq.~\eqref{eq:app-delay-explicit}.
+\end{proof}
+
+For \(\gamma_j=1/\{j(j+1)\}\),
+\[
+  L_j^{\rm floor}(d)=\log\frac1q+
+  \left[\log\frac{j(j+1)}{d+1}\right]_+.
+\]
+Since \(c_\mu=O(\mu)\) and \(g=\mu^2/4\), the sufficient delay is
+\begin{equation}
+ O\!\left(
+   \frac{\log j+\log(1/q)+\log(1/\delta)}{\mu^2}
+ \right).
+ \label{eq:app-delay-order}
+\end{equation}
+The penalty for proposal rank is logarithmic, while weak conditional drift
+incurs the usual inverse-square delay.  A mixture over betting fractions or
+a predictable plug-in bet avoids knowing \(\mu\) in advance, at a
+logarithmic power cost, provided each component is a global e-process.
+
+\section{From Certified Discoveries to Capital}
+\label{app:capital}
+
+The false-discovery certificate concerns a set of hypotheses.  It translates
+directly into a capital statement only under an allocation rule that
+preserves the relevant self-consistency.
+
+\begin{corollary}[Equal weights]
+\label{cor:app-equal-weight}
+Suppose every member of \(D_t\) receives the same gross sleeve weight.  Set
+the null-capital fraction to zero when \(D_t=\varnothing\).  Then
+\begin{equation}
+ \mathbb E_P\!\left[
+   \sup_{t\geq0}
+   \frac{\textnormal{gross capital in null sleeves at }t}
+        {\textnormal{gross strategy capital at }t}
+ \right]\leq q.
+ \label{eq:app-equal-capital}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Under equal gross sleeve weights, the displayed ratio is exactly
+\(\sum_{j\in D_t}N_j/(|D_t|\vee1)=\operatorname{FDP}(D_t)\) on every sample
+path.  Apply Theorem~\ref{thm:app-supfdr}.
+\end{proof}
+
+\begin{corollary}[E-budgeted allocation]
+\label{cor:app-e-budget}
+Let \(a_{j,t}\geq0\) be adapted gross-allocation shares satisfying
+\begin{align}
+ \sum_ja_{j,t}&\leq1,\notag\\
+ a_{j,t}&=0 &&\text{for }j\notin D_t,\notag\\
+ a_{j,t}&\leq q\gamma_j\widetilde E_j
+       &&\text{for }j\in D_t.
+ \label{eq:app-allocation-constraints}
+\end{align}
+Then
+\begin{equation}
+  \mathbb E_P\!\left[
+    \sup_{t\geq0}\sum_{j=1}^{\infty}N_ja_{j,t}\right]\leq q.
+  \label{eq:app-false-exposure}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For every \(t\), pathwise,
+\[
+ \sum_jN_ja_{j,t}
+ \leq q\sum_{j\in D_t}\gamma_jN_j\widetilde E_j
+ \leq q\sum_{j=1}^{\infty}\gamma_jN_j\overline E_j.
+\]
+The right-hand side is independent of \(t\).  Take the supremum and repeat
+the Tonelli and conditional-e-validity argument in the proof of
+Theorem~\ref{thm:app-supfdr}.
+\end{proof}
+
+For example, a portfolio optimizer with gross capacity \(G\) may solve
+\[
+ \max_{w\in\mathcal W}
+ \left\{
+   \widehat\mu_t^\top w
+   -\frac{\rho}{2}w^\top\widehat\Sigma_tw
+   -c\lVert w-w_{t-1}\rVert_1
+ \right\}
+\]
+subject to
+\begin{equation}
+ \operatorname{supp}(w)\subseteq D_t,\qquad
+ \lVert w\rVert_1\leq G,\qquad
+ \frac{|w_j|}{G}\leq q\gamma_j\widetilde E_j.
+ \label{eq:app-optimizer-constraints}
+\end{equation}
+With \(a_{j,t}=|w_{j,t}|/G\), Corollary~\ref{cor:app-e-budget} controls false
+gross exposure as a fraction of capacity.  It controls the fraction of
+\emph{deployed} gross capital only when \(\lVert w_t\rVert_1=G\).  With
+variable deployment, that interpretation requires defining
+\(a_{j,t}=|w_{j,t}|/\lVert w_t\rVert_1\) and enforcing
+Eq.~\eqref{eq:app-allocation-constraints} for those normalized shares.
+
+Count-FDR alone does not justify arbitrary filtering after certification.
+A downstream optimizer can place most capital in a false
+member of an otherwise valid discovery set.  Nor does an e-value measure
+effect size.  The certificate does not, by itself, control drawdown, CVaR,
+turnover, realized Sharpe ratio, or estimation error in expected returns and
+covariances.  Those quantities require a separate risk model and, where a
+statistical guarantee is desired, confidence sequences or other
+time-uniform estimators.  SAFE-ALPHA's role is narrower and auditable: it
+limits false admission to the strategy set, and it limits false gross
+exposure only when the allocation layer preserves the stated e-budget.

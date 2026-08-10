@@ -1,0 +1,32 @@
+{
+  "factors5": {
+    "bytes": 149700,
+    "filename": "F-F_Research_Data_5_Factors_2x3_daily_CSV.zip",
+    "sha256": "bcf32ecc9e2bb20383784ac98891e42146a0091eec6ec77d3b5bf0d4e981e3f6",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_daily_CSV.zip"
+  },
+  "industries30": {
+    "bytes": 2590771,
+    "filename": "30_Industry_Portfolios_daily_CSV.zip",
+    "sha256": "7140a2dbbae2b9fa871ac99c223c4310efd2aa526bb9fa6170b118dbd1d61848",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/30_Industry_Portfolios_daily_CSV.zip"
+  },
+  "long_reversal": {
+    "bytes": 80276,
+    "filename": "F-F_LT_Reversal_Factor_daily_CSV.zip",
+    "sha256": "0e6ce053ea0c159bb07346cd11c391104297a89adbd7424585fd84f2c7544546",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_LT_Reversal_Factor_daily_CSV.zip"
+  },
+  "momentum": {
+    "bytes": 89788,
+    "filename": "F-F_Momentum_Factor_daily_CSV.zip",
+    "sha256": "f4237e2e36dffa13fd7823f55376316a94b5ac663af951dd9eaca8ed2c678bcf",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Momentum_Factor_daily_CSV.zip"
+  },
+  "short_reversal": {
+    "bytes": 85834,
+    "filename": "F-F_ST_Reversal_Factor_daily_CSV.zip",
+    "sha256": "2114d1ff89842ee703d6c51bbde015c129df2f9edc97cf67fef2d7e278db743b",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_ST_Reversal_Factor_daily_CSV.zip"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "complete_252_day_holdouts": 74,
+  "fraction_post_below_pre": 0.7027027027027027,
+  "fraction_post_nonpositive": 0.5135135135135135,
+  "mean_optimism_gap": 0.5767502312484611,
+  "mean_postproposal_sharpe": -0.06306850748970641,
+  "mean_preproposal_sharpe": 0.5136817237587548,
+  "median_bootstrap_repetitions": 10000,
+  "median_bootstrap_seed": 20260730,
+  "median_optimism_gap": 0.5120915100354049,
+  "median_optimism_gap_bootstrap_ci_high": 0.7535170904314784,
+  "median_optimism_gap_bootstrap_ci_low": 0.39777811682589104,
+  "median_postproposal_sharpe": -0.03651750063070987,
+  "median_preproposal_sharpe": 0.4489209494570663,
+  "pre_post_pearson_correlation": 0.03443694254329558,
+  "preproposal_window_days": 1260,
+  "score_definition": "2-bp net excess candidate return",
+  "strict_postproposal_window_days": 252,
+  "symbolic_proposals": 76
+}

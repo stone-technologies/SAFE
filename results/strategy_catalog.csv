@@ -1,0 +1,90 @@
+strategy_id,family,direction,lookback,skip,breadth,rebalance,cost_bps,description
+market_ew30,broad_market,1,0,0,30,monthly,2.0,Equal-weighted 30-industry excess-return sleeve.
+cross_momentum_lb21_skip0_b3_weekly,cross_momentum,1,21,0,3,weekly,2.0,"Industry cross momentum, 21-day signal, 0-day skip."
+cross_momentum_lb21_skip0_b3_monthly,cross_momentum,1,21,0,3,monthly,2.0,"Industry cross momentum, 21-day signal, 0-day skip."
+cross_reversal_lb21_skip0_b3_weekly,cross_reversal,-1,21,0,3,weekly,2.0,"Industry cross reversal, 21-day signal, 0-day skip."
+cross_reversal_lb21_skip0_b3_monthly,cross_reversal,-1,21,0,3,monthly,2.0,"Industry cross reversal, 21-day signal, 0-day skip."
+cross_momentum_lb21_skip0_b5_weekly,cross_momentum,1,21,0,5,weekly,2.0,"Industry cross momentum, 21-day signal, 0-day skip."
+cross_momentum_lb21_skip0_b5_monthly,cross_momentum,1,21,0,5,monthly,2.0,"Industry cross momentum, 21-day signal, 0-day skip."
+cross_reversal_lb21_skip0_b5_weekly,cross_reversal,-1,21,0,5,weekly,2.0,"Industry cross reversal, 21-day signal, 0-day skip."
+cross_reversal_lb21_skip0_b5_monthly,cross_reversal,-1,21,0,5,monthly,2.0,"Industry cross reversal, 21-day signal, 0-day skip."
+cross_momentum_lb21_skip0_b10_weekly,cross_momentum,1,21,0,10,weekly,2.0,"Industry cross momentum, 21-day signal, 0-day skip."
+cross_momentum_lb21_skip0_b10_monthly,cross_momentum,1,21,0,10,monthly,2.0,"Industry cross momentum, 21-day signal, 0-day skip."
+cross_reversal_lb21_skip0_b10_weekly,cross_reversal,-1,21,0,10,weekly,2.0,"Industry cross reversal, 21-day signal, 0-day skip."
+cross_reversal_lb21_skip0_b10_monthly,cross_reversal,-1,21,0,10,monthly,2.0,"Industry cross reversal, 21-day signal, 0-day skip."
+cross_momentum_lb63_skip0_b3_weekly,cross_momentum,1,63,0,3,weekly,2.0,"Industry cross momentum, 63-day signal, 0-day skip."
+cross_momentum_lb63_skip0_b3_monthly,cross_momentum,1,63,0,3,monthly,2.0,"Industry cross momentum, 63-day signal, 0-day skip."
+cross_reversal_lb63_skip0_b3_weekly,cross_reversal,-1,63,0,3,weekly,2.0,"Industry cross reversal, 63-day signal, 0-day skip."
+cross_reversal_lb63_skip0_b3_monthly,cross_reversal,-1,63,0,3,monthly,2.0,"Industry cross reversal, 63-day signal, 0-day skip."
+cross_momentum_lb63_skip0_b5_weekly,cross_momentum,1,63,0,5,weekly,2.0,"Industry cross momentum, 63-day signal, 0-day skip."
+cross_momentum_lb63_skip0_b5_monthly,cross_momentum,1,63,0,5,monthly,2.0,"Industry cross momentum, 63-day signal, 0-day skip."
+cross_reversal_lb63_skip0_b5_weekly,cross_reversal,-1,63,0,5,weekly,2.0,"Industry cross reversal, 63-day signal, 0-day skip."
+cross_reversal_lb63_skip0_b5_monthly,cross_reversal,-1,63,0,5,monthly,2.0,"Industry cross reversal, 63-day signal, 0-day skip."
+cross_momentum_lb63_skip0_b10_weekly,cross_momentum,1,63,0,10,weekly,2.0,"Industry cross momentum, 63-day signal, 0-day skip."
+cross_momentum_lb63_skip0_b10_monthly,cross_momentum,1,63,0,10,monthly,2.0,"Industry cross momentum, 63-day signal, 0-day skip."
+cross_reversal_lb63_skip0_b10_weekly,cross_reversal,-1,63,0,10,weekly,2.0,"Industry cross reversal, 63-day signal, 0-day skip."
+cross_reversal_lb63_skip0_b10_monthly,cross_reversal,-1,63,0,10,monthly,2.0,"Industry cross reversal, 63-day signal, 0-day skip."
+cross_momentum_lb126_skip0_b3_weekly,cross_momentum,1,126,0,3,weekly,2.0,"Industry cross momentum, 126-day signal, 0-day skip."
+cross_momentum_lb126_skip0_b3_monthly,cross_momentum,1,126,0,3,monthly,2.0,"Industry cross momentum, 126-day signal, 0-day skip."
+cross_reversal_lb126_skip0_b3_weekly,cross_reversal,-1,126,0,3,weekly,2.0,"Industry cross reversal, 126-day signal, 0-day skip."
+cross_reversal_lb126_skip0_b3_monthly,cross_reversal,-1,126,0,3,monthly,2.0,"Industry cross reversal, 126-day signal, 0-day skip."
+cross_momentum_lb126_skip0_b5_weekly,cross_momentum,1,126,0,5,weekly,2.0,"Industry cross momentum, 126-day signal, 0-day skip."
+cross_momentum_lb126_skip0_b5_monthly,cross_momentum,1,126,0,5,monthly,2.0,"Industry cross momentum, 126-day signal, 0-day skip."
+cross_reversal_lb126_skip0_b5_weekly,cross_reversal,-1,126,0,5,weekly,2.0,"Industry cross reversal, 126-day signal, 0-day skip."
+cross_reversal_lb126_skip0_b5_monthly,cross_reversal,-1,126,0,5,monthly,2.0,"Industry cross reversal, 126-day signal, 0-day skip."
+cross_momentum_lb126_skip0_b10_weekly,cross_momentum,1,126,0,10,weekly,2.0,"Industry cross momentum, 126-day signal, 0-day skip."
+cross_momentum_lb126_skip0_b10_monthly,cross_momentum,1,126,0,10,monthly,2.0,"Industry cross momentum, 126-day signal, 0-day skip."
+cross_reversal_lb126_skip0_b10_weekly,cross_reversal,-1,126,0,10,weekly,2.0,"Industry cross reversal, 126-day signal, 0-day skip."
+cross_reversal_lb126_skip0_b10_monthly,cross_reversal,-1,126,0,10,monthly,2.0,"Industry cross reversal, 126-day signal, 0-day skip."
+cross_momentum_lb252_skip21_b3_weekly,cross_momentum,1,252,21,3,weekly,2.0,"Industry cross momentum, 252-day signal, 21-day skip."
+cross_momentum_lb252_skip21_b3_monthly,cross_momentum,1,252,21,3,monthly,2.0,"Industry cross momentum, 252-day signal, 21-day skip."
+cross_reversal_lb252_skip21_b3_weekly,cross_reversal,-1,252,21,3,weekly,2.0,"Industry cross reversal, 252-day signal, 21-day skip."
+cross_reversal_lb252_skip21_b3_monthly,cross_reversal,-1,252,21,3,monthly,2.0,"Industry cross reversal, 252-day signal, 21-day skip."
+cross_momentum_lb252_skip21_b5_weekly,cross_momentum,1,252,21,5,weekly,2.0,"Industry cross momentum, 252-day signal, 21-day skip."
+cross_momentum_lb252_skip21_b5_monthly,cross_momentum,1,252,21,5,monthly,2.0,"Industry cross momentum, 252-day signal, 21-day skip."
+cross_reversal_lb252_skip21_b5_weekly,cross_reversal,-1,252,21,5,weekly,2.0,"Industry cross reversal, 252-day signal, 21-day skip."
+cross_reversal_lb252_skip21_b5_monthly,cross_reversal,-1,252,21,5,monthly,2.0,"Industry cross reversal, 252-day signal, 21-day skip."
+cross_momentum_lb252_skip21_b10_weekly,cross_momentum,1,252,21,10,weekly,2.0,"Industry cross momentum, 252-day signal, 21-day skip."
+cross_momentum_lb252_skip21_b10_monthly,cross_momentum,1,252,21,10,monthly,2.0,"Industry cross momentum, 252-day signal, 21-day skip."
+cross_reversal_lb252_skip21_b10_weekly,cross_reversal,-1,252,21,10,weekly,2.0,"Industry cross reversal, 252-day signal, 21-day skip."
+cross_reversal_lb252_skip21_b10_monthly,cross_reversal,-1,252,21,10,monthly,2.0,"Industry cross reversal, 252-day signal, 21-day skip."
+low_volatility_lb21_b3_monthly,low_volatility,-1,21,0,3,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb21_b3_monthly,high_volatility,1,21,0,3,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb21_b5_monthly,low_volatility,-1,21,0,5,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb21_b5_monthly,high_volatility,1,21,0,5,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb21_b10_monthly,low_volatility,-1,21,0,10,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb21_b10_monthly,high_volatility,1,21,0,10,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb63_b3_monthly,low_volatility,-1,63,0,3,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb63_b3_monthly,high_volatility,1,63,0,3,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb63_b5_monthly,low_volatility,-1,63,0,5,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb63_b5_monthly,high_volatility,1,63,0,5,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb63_b10_monthly,low_volatility,-1,63,0,10,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb63_b10_monthly,high_volatility,1,63,0,10,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb126_b3_monthly,low_volatility,-1,126,0,3,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb126_b3_monthly,high_volatility,1,126,0,3,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb126_b5_monthly,low_volatility,-1,126,0,5,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb126_b5_monthly,high_volatility,1,126,0,5,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb126_b10_monthly,low_volatility,-1,126,0,10,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb126_b10_monthly,high_volatility,1,126,0,10,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb252_b3_monthly,low_volatility,-1,252,0,3,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb252_b3_monthly,high_volatility,1,252,0,3,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb252_b5_monthly,low_volatility,-1,252,0,5,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb252_b5_monthly,high_volatility,1,252,0,5,monthly,2.0,Cross-industry high volatility spread.
+low_volatility_lb252_b10_monthly,low_volatility,-1,252,0,10,monthly,2.0,Cross-industry low volatility spread.
+high_volatility_lb252_b10_monthly,high_volatility,1,252,0,10,monthly,2.0,Cross-industry high volatility spread.
+time_series_momentum_lb21_weekly,time_series_momentum,1,21,0,30,weekly,2.0,Industry-level time series momentum overlay.
+time_series_momentum_lb21_monthly,time_series_momentum,1,21,0,30,monthly,2.0,Industry-level time series momentum overlay.
+time_series_reversal_lb21_weekly,time_series_reversal,-1,21,0,30,weekly,2.0,Industry-level time series reversal overlay.
+time_series_reversal_lb21_monthly,time_series_reversal,-1,21,0,30,monthly,2.0,Industry-level time series reversal overlay.
+time_series_momentum_lb63_weekly,time_series_momentum,1,63,0,30,weekly,2.0,Industry-level time series momentum overlay.
+time_series_momentum_lb63_monthly,time_series_momentum,1,63,0,30,monthly,2.0,Industry-level time series momentum overlay.
+time_series_reversal_lb63_weekly,time_series_reversal,-1,63,0,30,weekly,2.0,Industry-level time series reversal overlay.
+time_series_reversal_lb63_monthly,time_series_reversal,-1,63,0,30,monthly,2.0,Industry-level time series reversal overlay.
+time_series_momentum_lb126_weekly,time_series_momentum,1,126,0,30,weekly,2.0,Industry-level time series momentum overlay.
+time_series_momentum_lb126_monthly,time_series_momentum,1,126,0,30,monthly,2.0,Industry-level time series momentum overlay.
+time_series_reversal_lb126_weekly,time_series_reversal,-1,126,0,30,weekly,2.0,Industry-level time series reversal overlay.
+time_series_reversal_lb126_monthly,time_series_reversal,-1,126,0,30,monthly,2.0,Industry-level time series reversal overlay.
+time_series_momentum_lb252_weekly,time_series_momentum,1,252,0,30,weekly,2.0,Industry-level time series momentum overlay.
+time_series_momentum_lb252_monthly,time_series_momentum,1,252,0,30,monthly,2.0,Industry-level time series momentum overlay.
+time_series_reversal_lb252_weekly,time_series_reversal,-1,252,0,30,weekly,2.0,Industry-level time series reversal overlay.
+time_series_reversal_lb252_monthly,time_series_reversal,-1,252,0,30,monthly,2.0,Industry-level time series reversal overlay.

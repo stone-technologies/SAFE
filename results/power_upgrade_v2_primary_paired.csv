@@ -1,0 +1,3 @@
+design,comparator,repetitions,design_power,comparator_power,paired_difference,paired_ci_low,paired_ci_high,wins,ties,losses
+campaign75-geometric-daily,telescoping-fixed,250,0.69275,0.57225,0.1205,0.10387383544556458,0.1371261645544354,183,52,15
+campaign75-geometric-daily,campaign75-fixed-daily,250,0.69275,0.645,0.04775,0.03352779087025787,0.061972209129742134,85,142,23

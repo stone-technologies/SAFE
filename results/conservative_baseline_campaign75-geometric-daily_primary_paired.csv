@@ -1,0 +1,2 @@
+design,annual_sharpe,correlation,repetitions,joint_power,alpha_spending_power,paired_difference,paired_ci_low,paired_ci_high,joint_wins,ties,joint_losses
+campaign75-geometric-daily,1.5,0.5,250,0.69,0.4645,0.2255,0.20775937890185942,0.2432406210981406,225,25,0

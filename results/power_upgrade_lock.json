@@ -1,0 +1,33 @@
+{
+  "locked_utc_date": "2026-08-09",
+  "development_seed_start": 41000000,
+  "development_repetitions_per_cell": 100,
+  "development_cells": {
+    "annual_sharpes": [1.0, 1.5, 2.0],
+    "correlations": [0.5]
+  },
+  "selection_metric": "mean end-to-end power across the three development effect cells, subject to the unchanged q=0.10 gate and admission floor h=10",
+  "selected_design": {
+    "name": "campaign75-fixed-daily",
+    "declared_campaign_cap": "M equals the proposal cap fixed before the first proposal",
+    "spending_rule": "gamma_j = 0.75/M + 0.25/[j(j+1)] for j <= M; gamma_j = 0.25/[j(j+1)] for j > M",
+    "inspection_cadence_trading_days": 1,
+    "betting_rule": "original proposal-time fixed Kelly estimate",
+    "new_admission_floor": 10.0
+  },
+  "rejected_designs": [
+    "proposal-time mixtures over 0.25, 0.50, and 1.00 times the fixed bet",
+    "campaign shares 0.25 and 0.50",
+    "anchor-preserving campaign schedules"
+  ],
+  "validation_seed_policy": "the pre-existing dense matched_seed_blocks map rooted at 314159 and 20260730, with 250 replications in each of 22 cells",
+  "validation_cells": {
+    "annual_sharpes": [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0],
+    "correlations": [0.0, 0.5]
+  },
+  "primary_validation_cell": {
+    "annual_sharpe": 1.5,
+    "correlation": 0.5
+  },
+  "public_replay_policy": "unchanged telescoping weights and five-day inspection; the campaign design is prospective and is not retrofitted to the observed market replay"
+}

@@ -1,0 +1,5 @@
+method,false_discovery_probability,ci_low,ci_high,mean_false_discoveries,median_first_day_if_any,repetitions,new_admission_floor
+SAFE-ALPHA,0.04,0.0260405939514,0.0609740550971,0.1,1756,500,10
+Same-bar leakage,1,0.992375381469,1,62.82,246,500,10
+Repeated 5% t-test,1,0.992375381469,1,23.608,311,500,
+Unadjusted one-year holdout,0.944,0.92025470136,0.960974637385,3.782,1231,500,

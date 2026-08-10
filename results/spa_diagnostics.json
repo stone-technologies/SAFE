@@ -1,0 +1,36 @@
+{
+  "adaptive_symbolic_proposals_only": {
+    "mean_block_length": 20.0,
+    "models": 76,
+    "observations": 4882,
+    "observed_max_studentized_statistic": 2.4991742298306523,
+    "p_value_consistent": 0.146,
+    "p_value_lower": 0.1075,
+    "p_value_upper": 0.146,
+    "repetitions": 1999,
+    "seed": 20260730
+  },
+  "convention": "Studentized Hansen SPA against zero; Politis-Romano stationary bootstrap; lower/consistent/upper sample-dependent recentering",
+  "full_89_rule_panel": {
+    "mean_block_length": 20.0,
+    "models": 89,
+    "observations": 4882,
+    "observed_max_studentized_statistic": 2.5129832290329293,
+    "p_value_consistent": 0.157,
+    "p_value_lower": 0.1085,
+    "p_value_upper": 0.158,
+    "repetitions": 1999,
+    "seed": 20260730
+  },
+  "without_market_positive_control": {
+    "mean_block_length": 20.0,
+    "models": 88,
+    "observations": 4882,
+    "observed_max_studentized_statistic": 2.4991742298306523,
+    "p_value_consistent": 0.1565,
+    "p_value_lower": 0.1075,
+    "p_value_upper": 0.1575,
+    "repetitions": 1999,
+    "seed": 20260730
+  }
+}

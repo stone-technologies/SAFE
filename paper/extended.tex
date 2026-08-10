@@ -1,0 +1,50 @@
+\documentclass[sigconf,anonymous]{acmart}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{microtype}
+\microtypesetup{expansion=false}
+\emergencystretch=1.5em
+\renewcommand{\textbullet}{\ensuremath{\bullet}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\DeclareMathOperator{\FDP}{FDP}
+\DeclareMathOperator{\KL}{KL}
+\makeatletter
+\global\@ACM@balancefalse
+\makeatother
+
+\setcopyright{none}
+\settopmatter{printacmref=true,printccs=true,printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\acmConference[Extended Technical Report]{Extended Technical Report}
+  {July 2026}{}
+\acmYear{2026}
+\acmISBN{}
+\acmDOI{}
+
+\title{SAFE-ALPHA: Anytime-Valid Certification for Adaptive Strategy Search}
+\subtitle{Extended technical report with proofs; not part of the ICAIF submission}
+\renewcommand{\shorttitle}{SAFE-ALPHA: Extended Technical Report}
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous}}
+\renewcommand{\shortauthors}{Anonymous Author(s)}
+\hypersetup{
+  pdfauthor={Anonymous},
+  pdftitle={SAFE-ALPHA: Extended Technical Report with Proofs}
+}
+
+\begin{document}
+\input{body}
+\appendix
+\input{appendix}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}

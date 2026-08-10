@@ -1,0 +1,43 @@
+{
+  "adaptive_proposals_only": {
+    "candidates": 76,
+    "white_reality_check": {
+      "block_length": 20,
+      "observed_max_statistic": 0.019830184426006793,
+      "p_value": 0.18981018981018982,
+      "repetitions": 1000
+    }
+  },
+  "deflated_sharpe_ratio": {
+    "deflated_sharpe_probability": 0.23385885519787336,
+    "estimated_annual_sharpe": 0.5161267579823525,
+    "expected_max_annual_sharpe": 0.6817957968217135,
+    "kurtosis": 6.546073762434823,
+    "skewness": -0.20247197808670947,
+    "trials": 89
+  },
+  "full_sample_winner": "cross_momentum_lb126_skip0_b3_monthly",
+  "full_sample_winner_sharpe": 0.5161267579823525,
+  "probability_backtest_overfitting": {
+    "blocks": 10,
+    "mean_sharpe_degradation_daily": 0.0349683462277231,
+    "median_logit": 0.8048511701399468,
+    "pbo": 0.15476190476190477,
+    "splits": 252
+  },
+  "white_reality_check": {
+    "block_length": 20,
+    "observed_max_statistic": 0.02893730908431218,
+    "p_value": 0.02197802197802198,
+    "repetitions": 1000
+  },
+  "without_positive_control": {
+    "white_reality_check": {
+      "block_length": 20,
+      "observed_max_statistic": 0.019830184426006793,
+      "p_value": 0.1968031968031968,
+      "repetitions": 1000
+    },
+    "winner": "cross_momentum_lb126_skip0_b3_monthly"
+  }
+}

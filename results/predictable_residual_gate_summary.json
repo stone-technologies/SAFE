@@ -1,0 +1,18 @@
+{
+  "bet_policy": "proposal-time fixed lambda re-estimated from predictable residual-score history",
+  "beta_timing": "beta for date t is estimated only through t-1",
+  "certification_dates": [],
+  "certifications": 0,
+  "certified_strategies": [],
+  "diagnostic_label": "predictable FF5+Mom residual-gate robustness check",
+  "factor_beta_lookback_days": 1260,
+  "inspection_days": 5,
+  "intercept_treatment": "retained; subtract beta[t-1]' factor[t] only",
+  "minimum_beta_observations": 252,
+  "new_admission_floor": 10.0,
+  "proposal_ledger": "identical archived 77 proposals and dates",
+  "proposal_weights": "gamma_j=1/[j(j+1)]",
+  "q": 0.1,
+  "score_scale_multiple": 4.0,
+  "score_scale_window": 63
+}
